@@ -1,0 +1,7 @@
+exportPattern("^[^\\.]")
+importFrom(stats, "aggregate", "complete.cases", "plnorm", "pnorm", "na.omit", "reshape", "smooth.spline", "predict", "median")
+importFrom(utils, "download.file", "read.csv", "read.table", "unzip")
+importFrom(grDevices, "png", "dev.off", "rgb", "colorRampPalette", "gray", "heat.colors", "rainbow", "tiff") 
+importFrom(graphics, "par", "axis", "points", "legend", "layout", "layout.show", "barplot")
+importFrom(raster, "plot", "text", "extent", "raster", "lines", "movingFun", "bind", "values", "merge", "setValues")
+importFrom(parallel, "mclapply")

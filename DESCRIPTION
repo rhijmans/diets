@@ -1,0 +1,15 @@
+Package: diets
+Type: Package
+Title: Estimate Dietary Quality
+Version: 0.5
+Date: 2020-05-18
+Maintainer: <r.hijmans@gmail.com>
+Description: Estimate micronutrient deficiencies for groups of people from their average food intake.
+License: GPL (>=3)
+URL: https://github.com/rhijmans
+Authors@R: c(
+	person("Robert J.", "Hijmans", role = c("cre", "aut"),  
+			email = "r.hijmans@gmail.com", comment = c(ORCID = "0000-0001-5872-2872")),
+    person("Eric", "Massiot",  role = "aut"),
+    person("Ty", "Beal", role = "aut"))
+
