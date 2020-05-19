@@ -18,13 +18,12 @@
 
 \details{
 
-This package and data can be used to reproduce and improve estimates of dietary micronutrient supplies and prevalence of inadequate intakes as described by Beal et al https://doi.org/10.1371/journal.pone.0175554
+This package and data can be used to estimate dietary micronutrient supplies and prevalence of inadequate intakes for countries. 
+The methods were described by 
+
+Beal T, Massiot E, Arsenault JE, Smith MR, Hijmans RJ (2017) Global trends in dietary micronutrient supplies and estimated prevalence of inadequate intakes. PLoS ONE 12(4): e0175554. https://doi.org/10.1371/journal.pone.0175554
 }
 
-\author{
-\packageAuthor{diets}
-Maintainer: \packageMaintainer{diets}
-}
 
 \references{
 IOM (Institute of Medicine) (2011) Dietary Reference Intakes for Calcium and Vitamin D. Washington, DC: The National Academies Press.
