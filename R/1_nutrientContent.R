@@ -1,6 +1,6 @@
 
 .dataPath <- function() {system.file("external", package="diets")}
-s
+
 ## Open a file with ISO3 codes and the different countries group (subregion...)
 .cgroup <- function() {
 	readRDS(file.path(.dataPath(), "GpCntries.rds"))

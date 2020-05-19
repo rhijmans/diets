@@ -33,8 +33,7 @@ adjust_intake_fe  <-  function(intake) {
 
 	### Calculation of the availibility of non Heme Iron
 	## Import MeatP, vitC and Phytate groups.
-	NH  <- readRDS(system.file("external", "NHemeIron.csv", package="diets")
-
+	NH  <- readRDS(system.file("external", "NHemeIron.csv", package="diets"))
 	
 	NH$MMeat[1] <- 5000 #RH for crazy cases
 	i  <- NH$MMeat > MeatP & NH$LMeat < MeatP

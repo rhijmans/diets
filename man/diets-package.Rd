@@ -18,16 +18,7 @@
 
 \details{
 
-The DESCRIPTION file:
-\packageDESCRIPTION{diets}
-\packageIndices{diets}
-The package is composed of the following parts :
-
-Base: compute average micronutrient intake by person per day, average micronutrient requirements by person per day and deficiencies, from 4 databases : population, micronutrient requirements by age, food consumption (in kCal or grams) and food micronutrient content.
-
-Compute: use the first part to calculate intake and requirements for the globe during the period 1961-2011.
-
-Prepare: use the databases from "Compute" to combine and create indicators.
+This package and data can be used to reproduce and improve estimates of dietary micronutrient supplies and prevalence of inadequate intakes as described by Beal et al https://doi.org/10.1371/journal.pone.0175554
 }
 
 \author{
@@ -56,18 +47,3 @@ United Nations (UN) (2012) World Population Database 04.
 }
 
 \keyword{ package }
-\keyword{ diets }
-\keyword{ PIMII }
-\keyword{ MDI }
-\keyword{ diets }
-\keyword{ Intake }
-\keyword{ Requirements }
-\keyword{ Prevalence }
-\keyword{ Deficiencies }
-\keyword{ Micronutrients }
-\keyword{ Nutrients }
-\keyword{ Consumption }
-\keyword{ Diet }
-\keyword{ Diet quality }
-\keyword{ Global Trends }
-

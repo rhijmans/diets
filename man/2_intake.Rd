@@ -13,7 +13,7 @@ The tables are merged by the food group.
 
 
 \usage{
-nutrientIntake(Consumption, Content, byEnergy=TRUE, Miller=TRUE, Wg){
+nutrientIntake(Consumption, Content, byEnergy=TRUE, Miller=TRUE, Wg)
 }
 
 \arguments{
