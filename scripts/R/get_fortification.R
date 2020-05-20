@@ -14,28 +14,21 @@ get_fortif <- function() {
   d$Units <- "GramsPerMille"
 
   ## Open the file with ISO3 to country name links.
-    isoC <- readRDS("data/countries.rds")
+   isoC <- readRDS("data/countries2.rds")
   
   ## Create a vector with all the countries name in the Fortif table
+  d$Country <- trimws(d$Country)
   d2 <- unique(d$Country)
 
   ## Check what merge and merge them
-  Verif <- match(d2, isoC[ ,"NAME_FAO"])
-  Correct <- data.frame(Country=d2, ISO3 = isoC[Verif, "ISO3"], stringsAsFactors=FALSE)
+  i <- match(d2, isoC$matchname)
+  m <- data.frame(Country=d2, ISO3 = isoC[i, "ISO3"], stringsAsFactors=FALSE)
 
-  ## Matrix of the ISO3 codes who are not in the Fortif file
-  add <- matrix(c("Algeria ", "ALG", "Azerbaijan", "AZE", "Bolivia; Plurinational State of", "BOL", "Congo", "COG", "Cote d'Ivoire", "CIV", "Korea; Democratic People", "PRK", "Fiji", "FJI", "Iran; Islamic Republic of", "IRN", "Lao People", "LAO", "Libya", "LIB", "Montenegro" , "MNE", "Netherlands Antilles", "ANT", "Occupied Palestinian Territory", "PSE", "Korea; Republic of", "KOR", "Republic of Moldova", "MDA", "Saint Vincent and the Grenadines", "VCT", "Serbia", "SRB", "Macedonia; former Yugoslav Republic ", "MKD", "Tanzania; United Republic of", "TZA", "Venezuela; Bolivarian Republic of", "VEN"), ncol=2, byrow=TRUE)
+	m[is.na(m[,2]), ]
 
-  ## Check the merge between the matrix and the Fortif file
-  i <- match(Correct$Country, add[,1])
-  Verif <- add[i,2]
-  Correct$ISO3[!is.na(i)] <- Verif[!is.na(Verif)]
-
-  ## Keep the non NA rows of the list, merge them with the Fortif file, class columns and order rows to the final table
-  Correct <- Correct[complete.cases(Correct), ]
-  dFinal <- merge(d, Correct, by="Country")
+  dFinal <- merge(d, m, by="Country")
 
 	dFinal <- data.frame(ISO3 = dFinal$ISO3, Area=dFinal$Country, dFinal[, c("Code_FdGp", "Crop", "Tagname", "Desc", "Units", "Values")])
 
-	saveRDS(dFinal, "fortification.rds")
+	saveRDS(dFinal, "pkg/fortification.rds")
 }

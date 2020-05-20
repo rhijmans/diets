@@ -4,6 +4,9 @@ scripts/RWA_FBS.rds
 scripts/*.rds
 scripts/**/*.rds
 scripts/**/*.csv
+scripts/**/*.txt
+scripts/**/*.pdf
+scripts/**/*.zip
 old/
 # zip files
 *.zip

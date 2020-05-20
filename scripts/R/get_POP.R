@@ -10,7 +10,9 @@ pop_old_countries <- function(d, oldISO3, oldName, newISO3s)  {
 
 
 library(curl)
-get_pop <- function(url) {
+get_pop <- function() {
+
+url <- "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_PopulationBySingleAgeSex_1950-2019.csv"
 
 	path="process/pop"
 	if(!exists(path)){
@@ -28,30 +30,20 @@ get_pop <- function(url) {
 	pop[, v] <- pop[, v] * 1000
 
     ## Open a list of ISO3 codes for all the countries
-    isoC <- readRDS("data/countries.rds")
+    isoC <- readRDS("data/countries2.rds")
     popCN <- unique(pop$Location)
 
   	## Check countries who merge between the iso3 file and the pop file and merge them
-  	Verif <- match(popCN, isoC[, "NAME"])
-  	Correct <- data.frame(Location = popCN, ISO3 = isoC[Verif, "ISO3"], stringsAsFactors = FALSE)
+  	i <- match(popCN, isoC$matchname)
+  	m <- data.frame(Location = popCN, ISO3 = isoC[i, "ISO3"], stringsAsFactors = FALSE)
 
   	## If you need to see what doesn't merge
-  	#popCN[is.na(Verif)]
-
-  	## Matrix of the ISO3 codes who are not in the UN file
-  	add <- matrix(c("Bolivia (Plurinational State of)", "BOL", "Brunei Darussalam", "BRN", "Congo", "COG", "State of Palestine", "PSE", "China, Hong Kong SAR", "HKG", "Iran (Islamic Republic of)", "IRN", "Dem. People's Republic of Korea", "PRK", "Republic of Korea", "KOR", "Lao People's Democratic Republic", "LAO", "China, Macao SAR", "MAC", "Republic of Moldova", "MDA", "Micronesia (Fed. States of)", "FSM", "R\xe9union", "REU", "Russian Federation", "RUS", "Viet Nam", "VNM", "Syrian Arab Republic", "SYR", "TFYR Macedonia", "MKD", "United Republic of Tanzania", "TZA", "United States of America", "USA", "United States Virgin Islands", "VIR", "Venezuela (Bolivarian Republic of)", "VEN", "Channel Islands", "CH?", "C\xf4te d'Ivoire", "CIV", "Cura\xe7ao", "CUW", "Czechia", "CZE", "Eswatini", "SWZ", "Cabo Verde", "CPV"), ncol=2, byrow=TRUE)
-
-  	## Check the merge between the matrix and the UN file
-    i <- match(Correct$Location, add[, 1])
-  	Verif <- add[i, 2]
-  	Correct$ISO3[!is.na(i)] <- Verif[!is.na(Verif)]
-
-  	## If you need to see what doesn't merge
-  	#Correct[is.na(Correct$ISO3), 1]
+  	#popCN[is.na(i)]
 
   	## Keep the non NA rows of the list, merge them with the UN file, class columns and order rows to the final table
-  	Correct <- Correct[!is.na(Correct$ISO3), ]
+  	m <- m[!is.na(m$ISO3), ]
   	popFinale <- merge(pop, Correct, by = "Location")
+
   	popFinal <- data.frame(ISO3 = popFinale$ISO3, Area = popFinale$Location, Year = popFinale$Time, popFinale[, c('PopMale', 'PopFemale', 'AgeGrp', 'AgeGrpStart', 'AgeGrpSpan')], stringsAsFactors = FALSE)
   	pop <- popFinal[order(popFinal[, 1], popFinal[, 3], popFinal[,6]), ]
 
@@ -59,8 +51,7 @@ get_pop <- function(url) {
 	x1 <- pop_old_countries(pop, "CSK",  "Czechoslovakia", c("CZE", "SVK"))
 	x2 <- pop_old_countries(pop, "SUN",  "Soviet Union", c("ARM", "AZE", "BLR", "EST", "GEO", "KAZ", "KGZ", "LVA", "LTU", "MDA", "RUS", "TJK", "TKM", "UKR", "UZB"))
 
-# check for Kosovo!
-	x3 <- pop_old_countries(pop, "YUG",  "Yugoslavia", c("BIH", "MNE", "HRV", "MKD", "SVN", "SRB")) 
+	x3 <- pop_old_countries(pop, "YUG",  "Yugoslavia", c("BIH", "MNE", "HRV", "MKD", "SVN", "SRB", "RKS")) 
 
 # check what FBS is doing (old or new ETH and SDN
 	pop$ISO3[pop$ISO3=="ETH"] <- "ETHnew"

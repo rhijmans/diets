@@ -3,149 +3,183 @@
 ## Change Units of the supplementary Foods Table
 .FCT_Sup_data  <- function(){
 
-  ## Name of the RDS file
-  fr <- file.path("data/FCTSup_MNutr.rds")
-  return(readRDS(fr))
+	fr <- file.path("data/FCTSup_MNutr.rds")
   
-  if (!file.exists(fr)) {
+	if (!file.exists(fr)) {
  
-    ## Open the csv
-    NutriWA <- utils::read.csv(file.path(.dataPath, "FCTSup.csv"), stringsAsFactors = FALSE, encoding = "UTF-8")
+		## Open the csv
+		NutriWA <- utils::read.csv("data/FCTSup.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
 
-    ## Change unit to per Thousand. Default is mcg
-    x <- NutriWA$Nutr_Val / 100000
-    i <- NutriWA$Units == "mg" | NutriWA$Units == "kJ" | NutriWA$Units == "kcal" | NutriWA$Units == "IU"
-    x[i]  <- NutriWA$Nutr_Val[i] / 100
-    i <- NutriWA$Units == "g"
-    x[i]  <- NutriWA$Nutr_Val[i] * 10
-    NutriWA$Nutr_Val <- x
+		## Change unit to per Thousand. Default is mcg
+		x <- NutriWA$Nutr_Val / 100000
+		i <- NutriWA$Units == "mg" | NutriWA$Units == "kJ" | NutriWA$Units == "kcal" | NutriWA$Units == "IU"
+		x[i]  <- NutriWA$Nutr_Val[i] / 100
+		i <- NutriWA$Units == "g"
+		x[i]  <- NutriWA$Nutr_Val[i] * 10
+		NutriWA$Nutr_Val <- x
 
-    ## Unit adjustment
-    NutriWA$Units <- ifelse(NutriWA$Units == "kJ" | NutriWA$Units == "kcal" | NutriWA$Units == "IU", NutriWA$Units, "GramsPerMille")
+		## Unit adjustment
+		NutriWA$Units <- ifelse(NutriWA$Units == "kJ" | NutriWA$Units == "kcal" | NutriWA$Units == "IU", NutriWA$Units, "GramsPerMille")
 
-    saveRDS(NutriWA, fr)
+		saveRDS(NutriWA, fr)
     }
-  readRDS(fr)
+
+	readRDS(fr)
 }
 
 
 .fixUSDA <- function(USDSA_Mnutr) {
-  ## Change Units name of Kcal
-  i  <- USDA_MNutr$Units == "kcal"
-  USDA_MNutr$Tagname[i] <- "ENERC_KCAL"
-  i  <- USDA_MNutr$Units == "kj"
-  USDA_MNutr$Tagname[i] <- "ENERC_KJ"
+## Change Units name of Kcal
+	i  <- USDA_MNutr$Units == "kcal"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "ENERC_KCAL"
+	i  <- USDA_MNutr$Units == "kJ"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "ENERC_KJ"
 
-  ## Tagnames improvment (http://www.fao.org/infoods/infoods/standards-guidelines/food-component-identifiers-tagnames/en/)
-  i <- USDA_MNutr$Tagname %in% c("F10D0", "F12D0", "F13D0", "F14D0", "F14D1", "F15D0", "F15D1", "F16D0", "F16D1C", "F16D1T", "F16D1", "F17D0", "F17D1", "F18D0", "F18D1C", "F18D1T", "F18D1", "F18D2CLA", "F18D2CN6", "F18D2TT", "F18D2", "F18D3CN3", "F18D3CN6", "F18D3", "F18D4", "F20D0", "F20D1", "F20D2CN6", "F20D3N3", "F20D3N6", "F20D3", "F20D4", "F20D5", "F21D5", "F22D0", "F22D1C", "F22D1T" , "F22D1", "F22D4", "F22D5", "F22D6", "F24D0", "F24D1C" , "F4D0", "F6D0", "F8D0")
+## Tagnames improvment (http://www.fao.org/infoods/infoods/standards-guidelines/food-component-identifiers-tagnames/en/)
+	i <- USDA_MNutr$Tagname %in% c("F10D0", "F12D0", "F13D0", "F14D0", "F14D1", "F15D0", "F15D1", "F16D0", "F16D1C", "F16D1T", "F16D1", "F17D0", "F17D1", "F18D0", "F18D1C", "F18D1T", "F18D1", "F18D2CLA", "F18D2CN6", "F18D2TT", "F18D2", "F18D3CN3", "F18D3CN6", "F18D3", "F18D4", "F20D0", "F20D1", "F20D2CN6", "F20D3N3", "F20D3N6", "F20D3", "F20D4", "F20D5", "F21D5", "F22D0", "F22D1C", "F22D1T" , "F22D1", "F22D4", "F22D5", "F22D6", "F24D0", "F24D1C" , "F4D0", "F6D0", "F8D0")
 
-  USDA_MNutr$Tagname[i] <- paste0(USDA_MNutr$Tagname[i], 'F')
+	USDA_MNutr$Tagname[i] <- paste0(USDA_MNutr$Tagname[i], 'F')
+	USDA_MNutr[USDA_MNutr$Tagname %in% "TOCPHA", 'Tagname'] <- "VITE"
 
-  USDA_MNutr[USDA_MNutr$Tagname %in% "TOCPHA", 'Tagname'] <- "VITE"
+	i  <-  USDA_MNutr$Units == "IU" & USDA_MNutr$Tagname == "VITD"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- paste0(USDA_MNutr$Tagname[i], "_IU")
 
-  i  <-  USDA_MNutr$Units == "IU" & USDA_MNutr$Tagname == "VITD"
-  USDA_MNutr$Tagname[i] <- paste0(USDA_MNutr$Tagname[i], "_IU")
+	i  <-  USDA_MNutr$NutrDesc == "Vitamin B-12, added"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "VITB12_ADD"
 
-  i  <-  USDA_MNutr$NutrDesc == "Vitamin B-12, added"
-  USDA_MNutr$Tagname[i] <- "VITB12_ADD"
+	i  <- USDA_MNutr$NutrDesc == "Vitamin E, added"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "VITE_ADD"
 
-  i  <- USDA_MNutr$NutrDesc == "Vitamin E, added"
-  USDA_MNutr$Tagname[i] <- "VITE_ADD"
+	i  <- USDA_MNutr$NutrDesc == "18:2 t not further defined"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "F18D2T_NA"
 
-  i  <- USDA_MNutr$NutrDesc == "18:2 t not further defined"
-  USDA_MNutr$Tagname[i] <- "F18D2T_NA"
+	i  <- USDA_MNutr$NutrDesc == "18:2 i"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "F18D2_i"
 
-  i  <- USDA_MNutr$NutrDesc == "18:2 i"
-  USDA_MNutr$Tagname[i] <- "F18D2_i"
+	i  <- USDA_MNutr$NutrDesc == "18:3i"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "F18D3_i"
 
-  i  <- USDA_MNutr$NutrDesc == "18:3i"
-  USDA_MNutr$Tagname[i] <- "F18D3_i"
-
-  i  <- USDA_MNutr$NutrDesc == "Adjusted Protein"
-  USDA_MNutr$Tagname[i] <- "Add_Prot"
+	i  <- USDA_MNutr$NutrDesc == "Adjusted Protein"
+	sum(i)
+	USDA_MNutr$Tagname[i] <- "Add_Prot"
 
   ## Change description name
-  USDA_MNutr$NutrDesc  <- trimws(USDA_MNutr$NutrDesc, "right")
+	#USDA_MNutr$NutrDesc  <- trimws(USDA_MNutr$NutrDesc, "right")
+	USDA_MNutr$NutrDesc  <- trimws(USDA_MNutr$NutrDesc)
 
-  i  <-  USDA_MNutr$NutrDesc == "Vitamin D (D2 + D3)"
-  USDA_MNutr$NutrDesc[i] <- "Vitamin D"
+	i  <-  USDA_MNutr$NutrDesc == "Vitamin D (D2 + D3)"
+	sum(i)
+	USDA_MNutr$NutrDesc[i] <- "Vitamin D"
 
-  i  <-  USDA_MNutr$NutrDesc == "Folate, total"
-  USDA_MNutr$NutrDesc[i] <- "Folate"
+	i  <-  USDA_MNutr$NutrDesc == "Folate, total"
+	sum(i)
+	USDA_MNutr$NutrDesc[i] <- "Folate"
 
-  i  <-  USDA_MNutr$NutrDesc == "Carbohydrate, by difference"
-  USDA_MNutr$NutrDesc[i] <- "Carbohydrate"
+	i  <-  USDA_MNutr$NutrDesc == "Carbohydrate, by difference"
+	sum(i)
+	USDA_MNutr$NutrDesc[i] <- "Carbohydrate"
 
-  i  <- USDA_MNutr$NutrDesc == "Vitamin E (alpha-tocopherol)"
-  USDA_MNutr$NutrDesc[i] <- "Vitamin E"
+	i  <- USDA_MNutr$NutrDesc == "Vitamin E (alpha-tocopherol)"
+	sum(i)
+	USDA_MNutr$NutrDesc[i] <- "Vitamin E"
 
   ## Change Units to per Thousand. Default is for mcg
-  x <- USDA_MNutr$Nutr_Val / 100000
-  i <- USDA_MNutr$Units == "mg" | USDA_MNutr$Units == "kJ" | USDA_MNutr$Units == "kcal" | USDA_MNutr$Units == "IU"
-  x[i]  <- USDA_MNutr$Nutr_Val[i] / 100
-  i <- USDA_MNutr$Units == "g"
-  x[i]  <- USDA_MNutr$Nutr_Val[i] * 10
-  USDA_MNutr$Nutr_Val <- x
+	x <- USDA_MNutr$Nutr_Val / 100000
+	i <- USDA_MNutr$Units == "mg" | USDA_MNutr$Units == "kJ" | USDA_MNutr$Units == "kcal" | USDA_MNutr$Units == "IU"
+	x[i]  <- USDA_MNutr$Nutr_Val[i] / 100
+	i <- USDA_MNutr$Units == "g"
+	x[i]  <- USDA_MNutr$Nutr_Val[i] * 10
+	USDA_MNutr$Nutr_Val <- x
 
-  ## Unit adjustment to per thousand
-  USDA_MNutr$Units <- ifelse(USDA_MNutr$Units == "kJ" | USDA_MNutr$Units == "kcal" | USDA_MNutr$Units == "IU", USDA_MNutr$Units, "GramsPerMille")
+## Unit adjustment to per thousand
+	USDA_MNutr$Units <- ifelse(USDA_MNutr$Units == "kJ" | USDA_MNutr$Units == "kcal" | USDA_MNutr$Units == "IU", USDA_MNutr$Units, "GramsPerMille")
 
 	USDA_MNutr
 }
 
+
 ## download and shape USDA SR27 (nutrients database)
+
+# RH updated to SR28
+# note that the are data files and update files (add, change, remove)
+
+
 .getUSDA  <- function(){
 
-	f <- file.path(.dataPath, "USDA_MNutr.rds")
-	return(readRDS(f))
-	
-	
-  ## Named of the save file
-  path <- tempdir()
-  fr <- file.path(path, "USDA_MNutr.rds")
+	.read_usda <- function(f) {
+		read.table(f, header=FALSE, sep="^", quote="~", fill=TRUE, stringsAsFactors=FALSE, na.strings="")
+	}
 
-  if (!file.exists(fr)) {
-    if(!exists(path)){
-      ## Create a directory if needed
-      dir.create(path, showWarnings=FALSE, recursive=TRUE)
-    }
 
-    ## URL of ucdavis for download
-    FURL = "http://data.biogeo.ucdavis.edu/sources/usda/sr27asc.zip"
+	path <- "process/sr28"
+	f <- file.path(path, "USDA_MNutr.rds")
 
-    ## Name of the untouch files
-    USDAFN <- file.path(path, basename(FURL))
+	if (!file.exists(f)) {
 
-    ## download, unzip and create the folder
-    if (!file.exists(USDAFN)) {
-      download.file(FURL, USDAFN, mode='wb')
-      unzip(USDAFN, junkpaths=TRUE, exdir=dirname(USDAFN))
-    }
+		u <- "https://www.ars.usda.gov/ARSUserFiles/80400535/DATA/SR/sr28/dnload/sr28asc.zip"
+		fmain <- file.path(path, basename(u))
+		if (!file.exists(fmain)) {
+			dir.create(dirname(fmain), FALSE, TRUE)
+			download.file(u, fmain, exdir=dirname(fmain))
+			unzip(fmain, exdir=dirname(fmain))
+		}
+		u <- "https://www.ars.usda.gov/ARSUserFiles/80400535/DATA/SR/sr28/dnload/sr28upd0516.zip"
+		fsup <- file.path(path, basename(u))
+		if (!file.exists(fsup)) {
+			download.file(u, fsup)
+			unzip(fsup, exdir=dirname(fsup))
+		}
+		### create one table from all the txt with the good column label (source pdf inside sr27asc)
+		## Open from ASCII
+		FD_GROUP <- .read_usda(file.path(path, "FD_GROUP.txt"))		
 
-    ### create one table from all the txt with the good column label (source pdf inside sr27asc)
-    ## Open from ASCII
-    FD_GROUP <- read.table(file.path(path, "FD_GROUP.txt"), header=FALSE, sep="^", quote="~", fill=TRUE, stringsAsFactors=FALSE, na.strings="")
-    FOOD_DES <- read.table(file.path(path, "FOOD_DES.txt"), header=FALSE, sep="^", quote="~", fill=TRUE, stringsAsFactors=FALSE, na.strings="")
-    NUT_DATA <- read.table(file.path(path, "NUT_DATA.txt"), header=FALSE, sep="^", quote="~", fill=TRUE, stringsAsFactors=FALSE, na.strings="")
-    NUTR_DEF <- read.table(file.path(path, "NUTR_DEF.txt"), header=FALSE, sep="^", quote="~", fill=TRUE, stringsAsFactors=FALSE, na.strings="")
+		FOOD_DES <- .read_usda(file.path(path, "FOOD_DES.txt"))
+		FOOD_add <- .read_usda(file.path(path, "ADD_FOOD.txt"))
+		FOOD_DES <- rbind(FOOD_DES, FOOD_add)
+		FOOD_chg <- .read_usda(file.path(path, "CHG_FOOD.txt"))
+		i <- match(FOOD_chg$V1, FOOD_DES$V1)
+		stopifnot(all(!is.na(i)))
+		FOOD_DES[i,] <- FOOD_chg
 
-    ## Column label
-    names(FD_GROUP) <- c("FdGrp_Cd", "Fd_Grp_Desc")
-    names(FOOD_DES) <- c("NDB_No", "FdGrp_Cd", "Long_Desc", "Shrt_Desc", "ComName", "ManufacName", "Survey", "Ref_desc", "Refuse", "SciName", "N_Factor", "Pro_Factor", "Fat_Factor", "CHO_Factor")
-    names(NUT_DATA) <- c("NDB_No", "Nutr_No", "Nutr_Val", "Num_Data_Pts", "Std_Error", "Src_Cd", "Deriv_Cd", "Ref_NDB_No", "Add_Nutr_Mark", "Num_Studies", "Min", "Max", "DF", "Low_EB", "Up_EB", "Stat_cmt", "AddMod_Date", "CC")
-    names(NUTR_DEF) <- c("Nutr_No", "Units", "Tagname", "NutrDesc", "Num_Dec", "SR_Order")
+		NUT_DATA <- .read_usda(file.path(path, "NUT_DATA.txt"))
+		NUT_del  <- .read_usda(file.path(path, "DEL_NUTR.txt"))
+		x <- merge(cbind(NUT_DATA[, 1:2], id=1:nrow(NUT_DATA)), NUT_del)
+		NUT_DATA <- NUT_DATA[-x$id, ]
 
-    ## All in one file (merge, merge, merge)
-    NUTR <- merge(NUTR_DEF, NUT_DATA, by = "Nutr_No")
-    FOOD  <- merge(FD_GROUP, FOOD_DES, by = "FdGrp_Cd")
-    USDA_MNutr <- merge(FOOD, NUTR, by = "NDB_No")	
-	
-	USDA_MNutr <- .fixUSDA(USDA_MNutr)
+		NUT_add  <- .read_usda(file.path(path, "ADD_NUTR.txt"))
+		NUT_DATA <- rbind(NUT_DATA, NUT_add)
 
-#	saveRDS(USDA_MNutr, "E:/bitbucket/diets/diets/inst/external/USDA_MNutr.rds")	
-    saveRDS(USDA_MNutr, fr)
-  }
-  readRDS(fr)
+		NUT_chg <- .read_usda(file.path(path, "CHG_NUTR.txt"))
+		x <- merge(cbind(NUT_DATA[, 1:2], id=1:nrow(NUT_DATA)), NUT_chg)
+		NUT_DATA[x$id, ] <- x[, -c(1:3)]
+
+		NUTR_DEF <- .read_usda(file.path(path, "NUTR_DEF.txt"))
+
+		## Column label
+		names(FD_GROUP) <- c("FdGrp_Cd", "Fd_Grp_Desc")
+		names(FOOD_DES) <- c("NDB_No", "FdGrp_Cd", "Long_Desc", "Shrt_Desc", "ComName", "ManufacName", "Survey", "Ref_desc", "Refuse", "SciName", "N_Factor", "Pro_Factor", "Fat_Factor", "CHO_Factor")
+		names(NUT_DATA) <- c("NDB_No", "Nutr_No", "Nutr_Val", "Num_Data_Pts", "Std_Error", "Src_Cd", "Deriv_Cd", "Ref_NDB_No", "Add_Nutr_Mark", "Num_Studies", "Min", "Max", "DF", "Low_EB", "Up_EB", "Stat_cmt", "AddMod_Date", "CC")
+		names(NUTR_DEF) <- c("Nutr_No", "Units", "Tagname", "NutrDesc", "Num_Dec", "SR_Order")
+
+		## All in one file (merge, merge, merge)
+		NUTR <- merge(NUTR_DEF, NUT_DATA, by = "Nutr_No")
+		FOOD  <- merge(FD_GROUP, FOOD_DES, by = "FdGrp_Cd")
+		USDA_MNutr <- merge(FOOD, NUTR, by = "NDB_No")	
+		
+		USDA_MNutr <- .fixUSDA(USDA_MNutr)
+
+	#	saveRDS(USDA_MNutr, "E:/bitbucket/diets/diets/inst/external/USDA_MNutr.rds")	
+		saveRDS(USDA_MNutr, f)
+	}
+	readRDS(f)
 }
 
 
@@ -184,7 +218,7 @@
 getFCT  <-  function(fbs) {
 
 
-	d <- utils::read.csv(file.path(.dataPath, "FCTTitles.csv"), stringsAsFactors = FALSE, na.strings = "", encoding = "UTF-8")
+	d <- read.csv("data/FCTTitles.csv")
 	if (fbs) {
 		d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
 	} else {
@@ -219,3 +253,4 @@ getFCT  <-  function(fbs) {
 	saveRDS(FCT, f)
 	invisible(FCT)
 }
+
