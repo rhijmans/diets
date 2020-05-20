@@ -42,7 +42,7 @@ url <- "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/C
 
   	## Keep the non NA rows of the list, merge them with the UN file, class columns and order rows to the final table
   	m <- m[!is.na(m$ISO3), ]
-  	popFinale <- merge(pop, Correct, by = "Location")
+  	popFinale <- merge(pop, m, by = "Location")
 
   	popFinal <- data.frame(ISO3 = popFinale$ISO3, Area = popFinale$Location, Year = popFinale$Time, popFinale[, c('PopMale', 'PopFemale', 'AgeGrp', 'AgeGrpStart', 'AgeGrpSpan')], stringsAsFactors = FALSE)
   	pop <- popFinal[order(popFinal[, 1], popFinal[, 3], popFinal[,6]), ]
@@ -63,7 +63,8 @@ url <- "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/C
 	pop <- rbind(pop, x)
 
 	saveRDS(pop, basename(f))
-	rwa <- pop[pop$ISO3 == "RWA", ]
+	rwa <- pop[pop$ISO3 == "RWA" & pop$Year == 2017, ]
+	
 	saveRDS(rwa, "pkg/rwa_pop.rds")
 }
 

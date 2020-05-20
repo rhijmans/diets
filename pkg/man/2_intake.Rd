@@ -7,18 +7,18 @@ Compute nutrient intake from consumption and nutrient content data
 }
 
 \description{
-This function return micronutrient intake by combining food quantity (consumption) and food micronutrient composition (content).
+This function computes micronutrient intake from food quantity (consumption) and food micronutrient composition (content).
 The tables are merged by the food group.
 }
 
 
 \usage{
-nutrientIntake(Consumption, Content, byEnergy=TRUE, Miller=TRUE, Wg)
+nutrientIntake(consumption, content, byEnergy=TRUE, Miller=TRUE, Wg)
 }
 
 \arguments{
-  \item{Consumption}{data.frame. Columns must be ordered. Order : Food group code, food group value}
-  \item{Content}{data.frame. Columns must be ordered. Order : Food group Code, Micronutrient Tagname, micronutrient value}
+  \item{consumption}{data.frame. Columns must be ordered. Order : Food group code, food group value}
+  \item{content}{data.frame. Columns must include "code", "group", "tag", "value", "unit"}
   \item{byEnergy}{logical. If \code{TRUE} merge content and consumption by "energy", else by "weight"}
   \item{Miller}{logical. if \code{TRUE}, apply Miller equation for phytic acid and Zn to compute physiological Zn}
   \item{Wg}{data.frame. Only useful if \code{byENERGY = FALSE}. Columns must be ordered. Order : Food group Code, Yield , Edible}
@@ -42,14 +42,13 @@ Eric Massiot, Ty Beal, Robert Hijmans
 
 
 \examples{
-\dontrun{
-content  <-  1_nutrientContent(ISO3="RWA", conti=TRUE, palmoil=TRUE, sweetpot=TRUE)
-consumption <- base_2_getConsumption(ISO3="RWA", start=2005, end=2009, use="ENERGY")
+content <- nutrientContent(continent="Africa", redpalmoil=0.5, orangesweetpot=0.2)
+consumption <- readRDS(system.file("ex/rwa_FBS.rds", package = "diets"))
+intake  <- nutrientIntake(consumption, content)
+
 
 ## You need Wg only if you choose use = "weight"
-#Wg <- file.path(system.file(package = "diets"), "external/Wg.rds")
+Wg <- readRDS(system.file("ex/Wg.rds", package = "diets")
+}
 
-intake  <- base_3_Intake(consumption, content, use="ENERGY", zn=TRUE)
-}
-}
 

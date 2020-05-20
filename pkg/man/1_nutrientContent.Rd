@@ -7,7 +7,7 @@
 }
 
 \description{
-This function returns a data.frame with (micro-)nutrient content by food group (FdGp1). It was computed with a Food Composition Table (FCT) by averaging all the nutrients by the first level of food group.
+This function returns a \code{data.frame} with (micro-)nutrient content by food group (FdGp1). It was computed with a Food Composition Table (FCT) by averaging all the nutrients by the first level of food group.
 
 \code{code} = food group code
 
@@ -49,5 +49,9 @@ Wessells KR, Singh GM, Brown KH (2012) Estimating the Global Prevalence of Inade
 
 \examples{
 content <- nutrientContent(continent="Africa", redpalmoil=0.5, orangesweetpot=0.2)
+
+
+# this is the table that is used to do the continent based adjustments
+FCTcnt <- readRDS(system.file("ex/ContiConsump.rds", package="diets"))
 }
 

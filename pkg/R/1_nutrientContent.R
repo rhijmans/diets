@@ -1,10 +1,10 @@
 
-.dataPath <- function() {system.file("external", package="diets")}
+.dataPath <- function() {system.file("ex", package="diets")}
 
 ## Open a file with ISO3 codes and the different countries group (subregion...)
-.cgroup <- function() {
-	readRDS(file.path(.dataPath(), "GpCntries.rds"))
-}
+#.cgroup <- function() {
+#	readRDS(file.path(.dataPath(), "GpCntries.rds"))
+#}
 
 nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=FALSE) {
 
