@@ -1,6 +1,8 @@
 \name{nutrientContent}
 
 \alias{nutrientContent}
+\alias{fortify}
+
 
 \title{
 (Micro-) nutrients in food or food groups
@@ -38,7 +40,7 @@ data.frame
 }
 
 \references{
-US Department of Agriculture, Agricultural Research Service, Nutrient Data Laboratory (2015) USDA National Nutrient Database for Standard Reference, Release 27 (slightly revised). Version Current:  May 2015.
+US Department of Agriculture, Agricultural Research Service. 2016. Nutrient Data Laboratory. USDA National Nutrient Database for Standard Reference, Release 28 (Slightly revised). Version Current: May 2016. http://www.ars.usda.gov/nea/bhnrc/mafcl
 
 Food and Agriculture Organisation (FAO) (2012) West African Food Composition Table. Rome.
 
@@ -48,10 +50,22 @@ Wessells KR, Singh GM, Brown KH (2012) Estimating the Global Prevalence of Inade
 }
 
 \examples{
-content <- nutrientContent(continent="Africa", redpalmoil=0.5, orangesweetpot=0.2)
 
+content <- nutrientContent(continent="Africa", redpalmoil=0.5, orangesweetpot=0.2)
 
 # this is the table that is used to do the continent based adjustments
 FCTcnt <- readRDS(system.file("ex/ContiConsump.rds", package="diets"))
+
+
+# fortify
+fort <- readRDS(system.file("ex/fortification.rds", package="diets"))
+fort_sen <- fort[fort$area == "Senegal", ]
+fort_sen
+
+fcontent <- fortify(content, fort_sen)
+
+content[content$group=="Wheat and products" & content$tag=="ZN", ]
+fort_sen[fort_sen$group=="Wheat and products" & fort_sen$tag=="ZN", ]
+fcontent[fcontent$group=="Wheat and products" & fcontent$tag=="ZN", ]
 }
 

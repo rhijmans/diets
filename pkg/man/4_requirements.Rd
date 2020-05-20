@@ -11,7 +11,7 @@ Compute nutrient requirements for a population based on the age and sex distribu
 }
 
 \usage{
-nutrient_requirements(pop, reqs)
+nutrient_requirements(pop, reqs, aggregate=TRUE)
 }
 
 \arguments{
@@ -41,10 +41,12 @@ Eric Massiot, Ty Beal, Robert Hijmans
 }
 
 \examples{
-\dontrun{
-req_age <- readRDS(file.path(system.file(package = "diets"), "external/ReqAge.rds"))
-pop <- base_6_getPopulation(ISO3='RWA', start=2005, end=2009)
-requirements <- base_7_Requirements(pop, req_age, zn=TRUE)
+req <- readRDS(system.file("ex/reqs.rds", package = "diets"))
+reqrda <- readRDS(system.file("ex/reqs_rda.rds", package = "diets"))
+
+pop <- readRDS(system.file("ex/rwa_pop.rds", package = "diets"))
+
+popreq <- nutrient_requirements(pop, reqrda)
 }
-}
+
 

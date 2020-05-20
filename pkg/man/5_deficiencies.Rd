@@ -7,12 +7,12 @@ Compute micronutrient deficiencies
 }
 
 \description{
-This function returns deficiencies, requirements and intake for a population.
+This function returns micronutrient deficiencies based on requirements and intake
 For CV, see references.
 }
 
 \usage{
-deficiencies(ReqIntk, CV)
+deficiencies(intake, requirements, CV)
 }
 
 \arguments{
@@ -25,7 +25,7 @@ The code will use "CV[,3]" -Units- to reshape the deficiencies values.
 }
 
 \value{
-matrix
+data.frame
 }
 
 \references{
@@ -38,10 +38,6 @@ Nelson M, Black AE, Morris JA, Cole TJ, 1989. Between-and within-subject variati
 Calloway DH, Murphy SP, Beaton GH, Lein D, 1993. Estimated vitamin intakes of toddlers: predicted prevalence of inadequacy in village populations in Egypt, Kenya, and Mexico. The American journal of clinical nutrition, 58(3), 376-384.
 
 Murphy SP, Beaton GH, Calloway DH, 1992. Estimated mineral intakes of toddlers: predicted prevalence of inadequacy in village populations in Egypt, Kenya, and Mexico. The American journal of clinical nutrition, 56(3), 565-572.
-}
-
-\author{
-Eric Massiot, Ty Beal, Robert Hijmans
 }
 
 

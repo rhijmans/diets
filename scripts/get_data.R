@@ -20,11 +20,9 @@ get_FBS()
 source("R/get_POP.R")
 get_pop()
 
-
 ####
 #### fortification
 ####
-
 source("R/get_fortification.R")
 get_fortif()
 
@@ -37,3 +35,4 @@ saveRDS(r, "pkg/reqs.rds")
 rda <- getRe
 q(rda=TRUE)
 saveRDS(rda, "pkg/reqs_rda.rds")
+

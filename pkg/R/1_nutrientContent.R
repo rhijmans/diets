@@ -16,7 +16,7 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	FCT  <- readRDS(file.path(.dataPath(), ifelse(fbs, "FCT.rds", "FCT_FBS.rds")))
 
 	if (continent != "") {
-		## Open a file with continental differencies in fruit and vegetable consumption
+		## Open a file with continental differencis in fruit and vegetable consumption
 		FCTcnt <- readRDS(file.path(.dataPath(), "ContiConsump.rds"))
 		names(FCTcnt)[1:4]  <- c("Code_FdGp2", "Item_FdGp2", "Code_FdGp1", "Item_FdGp1")
 		
@@ -79,4 +79,28 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	colnames(ShrtFCT) <- c("code", "group", "tag", "value", "unit", "desc")
 	return(ShrtFCT)
 }
+
+
+
+fortify <-  function(content, fort) {
+	f <- fort[,c("code", "tag", "unit", "value")]
+	nr <- NROW(fort)
+	if (nr == 0) {	return(content) }
+	f <- unique(f)
+	if (NROW(f) < nr) {	return(stop("duplicates in fort")) }
+	
+	colnames(f)[3:4] <- c("funit", "fvalue")
+	m <- merge(content, f, by = c("code", "tag"), all.x=TRUE)
+	test <- unique(na.omit(m[, c("tag", "unit", "funit")]))
+	if (!all(test$unit == test$funit)) {
+		stop("units do not match")
+	}
+	i <- !is.na(m$fvalue)
+	m$value[i] <- rowSums(m[i, c("value", "fvalue")])
+	m$funit <- NULL
+	m$fvalue <- NULL
+	return(m)
+}
+
+
 

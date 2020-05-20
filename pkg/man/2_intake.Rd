@@ -8,20 +8,19 @@ Compute nutrient intake from consumption and nutrient content data
 
 \description{
 This function computes micronutrient intake from food quantity (consumption) and food micronutrient composition (content).
-The tables are merged by the food group. 
+The tables are merged by the food group. By default, content and consumption are merged usung by the energy consuption and content of the food groups. It can also be done by weight, in which case a data.frame with parameters for the food groups needs to be supplied.
 }
 
 
 \usage{
-nutrientIntake(consumption, content, byEnergy=TRUE, Miller=TRUE, weight, verbose=TRUE)
+nutrientIntake(consumption, content, weight=NULL, verbose=TRUE)
 }
 
 \arguments{
   \item{consumption}{data.frame. Must contain variables "group" and "value". "group" is used to join the \code{consumption} and \code{content} data.frames}
   \item{content}{data.frame. Must contain variables "group", "tag", "value", and "unit"}
-  \item{byEnergy}{logical. If \code{TRUE} merge content and consumption by "energy", else by "weight"}
-  \item{Miller}{logical. if \code{TRUE}, apply Miller equation for phytic acid and Zn to compute physiological Zn}
-  \item{weight}{data.frame. Only useful if \code{byEnergy=FALSE}. Columns must include "group", "yield" and "edible"}
+  \item{weight}{data.frame for merging by weight. Columns must include "group", "yield" and "edible"}
+  \item{verbose}{logical. If \code{TRUE} groups that are in consumption but not in conent are printed}
 }
 
 \details{
@@ -30,10 +29,6 @@ Micronutrient tagnames are available at http://www.fao.org/infoods/infoods/stand
 
 \value{
 matrix
-}
-
-\references{
-Hotz C and Brown KH, (Eds.) (2004) International Zinc Nutrition Consultative Group (IZiNCG) Assessment of the risk of zinc deficiency in populations and options for its control. Food and Nutrition Bulletin 25: S91-S204, 2004.
 }
 
 
@@ -50,10 +45,9 @@ head(content)
 
 intake  <- nutrientIntake(consumption, content)
 
-
-
 ## You need Wg only if you choose use = "weight"
-Wg <- readRDS(system.file("ex/groupWeights.rds", package = "diets"))
+Wg <- readRDS(system.file("ex/groupWeight.rds", package = "diets"))
+intake2  <- nutrientIntake(consumption, content, weight=Wg)
 }
 
 
