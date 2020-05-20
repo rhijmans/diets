@@ -22,8 +22,8 @@ get_FBS <- function() {
 	  ## download and unzip
 		if (!file.exists(FBSfn)) {
 			download.file(FURL, FBSfn, mode = "wb")
+			unzip(FBSfn, junkpaths = TRUE, exdir =path)
 		}
-		unzip(FBSfn, junkpaths = TRUE, exdir =path)
 	
 		## reshape
 		csvf <- gsub(".zip", ".csv", FBSfn)
@@ -58,6 +58,7 @@ get_FBS <- function() {
 	# example for the package	
 		if (method=="new") {
 			rwafbs = fbs2[fbs2$Area == "Rwanda" & fbs2$Year == 2017 & fbs2$Element == "Food supply (kcal/capita/day)", ]
+			rwafbs$ISO3 = NULL
 			saveRDS(rwafbs, "pkg/rwa_FBS.rds")
 		}
 	}
