@@ -1,5 +1,4 @@
 
-.dataPath <- function() {system.file("ex", package="diets")}
 
 ## Open a file with ISO3 codes and the different countries group (subregion...)
 #.cgroup <- function() {
@@ -7,6 +6,8 @@
 #}
 
 nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=FALSE) {
+
+	.dataPath <- function() {system.file("ex", package="diets")}
 
 	continent <- trimws(continent)
 	stopifnot(continent %in% c("Africa", "Americas", "Asia", "Europe", "Oceania", ""))
@@ -43,16 +44,18 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	}
 
 	i <- is.na(FCT$PCT1_2)
-	FCT$PCT1_2[i]  <- "nop"
+	OneMerge  <- FCT[i, ]
+	
+	#FCT$PCT1_2[i]  <- "nop"
+	#OneMerge  <- FCT[FCT$PCT1_2 == "nop",]
 
-	OneMerge  <- FCT[FCT$PCT1_2 == "nop",]
   ## FISH have no PCT1_2 so they are directly multiply by PCT2_3 (Select, Multiply and aggregate by PCT2_3)
   ## PCT2_3
 	OneMerge$MNutr_Val  <- (OneMerge$MNutr_Val * OneMerge$PCT2_3) / 100
-	ShrtFCT  <- aggregate(OneMerge[, c("MNutr_Val"), drop = FALSE], OneMerge[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	ShrtFCT  <- aggregate(OneMerge[, "MNutr_Val", drop = FALSE], OneMerge[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
 
-
-	TwoMerge  <- FCT[FCT$PCT1_2 != "nop",]
+	#TwoMerge  <- FCT[FCT$PCT1_2 != "nop",]
+	TwoMerge  <- FCT[!i, ]
 	if(nrow(TwoMerge) > 0){
     ## The rest of the food must be divide by PCT2_3 and PCT1_2 (Select, Multiply and aggregate by PCT2_3 and PCT1_2)
     ## PCT2_3
@@ -77,6 +80,12 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	ShrtFCT  <- rbind(ShrtFCT, PHY)
 	ShrtFCT  <- ShrtFCT[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutr_Val", "Units_MNutr", "MNutrDesc")]
 	colnames(ShrtFCT) <- c("code", "group", "tag", "value", "unit", "desc")
+
+# RH
+	ShrtFCT$unit[ShrtFCT$unit == "GramsPerMille"] <- "permille"
+	ShrtFCT$unit[ShrtFCT$unit == "PerThousand"] <- "permille"
+	ShrtFCT <- ShrtFCT[ShrtFCT$tag != "ENERC_KJ", ]
+  
 	return(ShrtFCT)
 }
 
@@ -92,9 +101,10 @@ fortify <-  function(content, fort) {
 	colnames(f)[3:4] <- c("funit", "fvalue")
 	m <- merge(content, f, by = c("code", "tag"), all.x=TRUE)
 	test <- unique(na.omit(m[, c("tag", "unit", "funit")]))
-	if (!all(test$unit == test$funit)) {
-		stop("units do not match")
-	}
+	
+	#if (!all(test$unit == test$funit)) {
+	#	stop("units do not match")
+	#}
 	i <- !is.na(m$fvalue)
 	m$value[i] <- rowSums(m[i, c("value", "fvalue")])
 	m$funit <- NULL

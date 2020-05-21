@@ -24,7 +24,7 @@ Adjust micronutrient intake.
 }
 
 \usage{
-add_CA(intake, consumption=1.7, concentration=0.042)
+add_Ca(intake, consumption=1.7, concentration=0.042)
 adjust_Ca(intake)
 adjust_Zn(intake)
 adjust_Fe(intake, heme)
@@ -53,7 +53,6 @@ Hallberg L, Hultén L, Gramatkovski E, 1997. Iron absorption from the whole diet
 
 
 \examples{
-
 consumption <- readRDS(system.file("ex/rwa_FBS.rds", package = "diets"))
 consumption <- consumption[consumption$Element == "Food supply (kcal/capita/day)", c("Item", "Value")]
 colnames(consumption) <- c("group", "value")

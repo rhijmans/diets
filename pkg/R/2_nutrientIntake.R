@@ -29,26 +29,29 @@ nutrientIntake  <-  function(consumption, content, weight=NULL, verbose=TRUE){
 		#TWeight  <- merge(contentNRG[,c("code", "value")], consumption, by = "code")
 		#TWeight$Mass  <- TWeight[,"FdGp1_Val"] / TWeight[,"MNutr_Val"]
 		
-		m  <- merge(consumption, content, by="group")
+		m  <- merge(consumption, contentNRG, by="group")
 		m$mass  <- m$value.x / m$value.y
 		m$mass[!is.finite(m$mass)] <- 0  # division by 0, or 0/0
 
     ## add mass to the content
-		content  <- merge(content, m[,c("group", "tag", "mass")], by = c("group", "tag")) #, all.x = TRUE)
+		cont  <- merge(content, m[,c("group", "mass")], by = "group") #, all.x = TRUE)
 		
 	} else { # if (use == "WEIGHT"){
 		## Merge and calculate the weight per food group (g/capita/day)
 		m  <- merge(consumption, weight, by = "group")
 		m$mass  <- m[,"value"] * m[,"edible"] * m[,"yield"]
 
-		## add mass to the content
-		content  <- merge(content, m[,c("group", "mass")], by = "group") #, all.x = TRUE)
+		## add mass to the cont
+		cont  <- merge(content, m[,c("group", "mass")], by = "group") #, all.x = TRUE)
 	}
 
   ## Calculate micronutrient per person per day
-	content$intake <- content$value * content$mass / 1000
-	content <- content[content$intake > 0, ]
-	#content  <- content[,c("tag", "MNutr_PersonDay", "Code_FdGp1", "Item_FdGp1", "MNutr_Val", "Mass")]
-	return(content)
+	#RH if I understand it well
+	# I think like this it mg/g * g/1000 = g
+
+	cont$intake <- cont$value * cont$mass / 1000
+	cont <- cont[cont$intake > 0, ]
+	#cont  <- cont[,c("tag", "MNutr_PersonDay", "Code_FdGp1", "Item_FdGp1", "MNutr_Val", "Mass")]
+	return(cont)
 }
 

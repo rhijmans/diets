@@ -53,6 +53,7 @@ adjust_Zn <- function(intake) {
 
 
 adjust_Fe <- function(intake, heme) {
+
 	## Calculation of the iron bio-availability factor
 	prot  <- intake[intake$tag == "PROCNT",]
 	
@@ -87,7 +88,7 @@ adjust_Fe <- function(intake, heme) {
 	## Parts of heme iron in differents types of meats
 	Heme  <- data.frame(first = c("2731", "2732", "2733", "2734", "2735", "2736", "2761", "2762", "2763", "2764", "2766", "2767", "2768", "2769"), second = c(65, 72, 39, 26, 40, 40, 26, 26, 26, 26, 40, 40, 40, 40), stringsAsFactors = FALSE)
 	Iron  <- merge(Iron, Heme, by.x = "code", by.y= "first" , all.x = TRUE)
-	i <- is.na(Iron[,"tag"])
+	i <- is.na(Iron$tag)
 	Iron[i,"tag"]  <- 0
 	Iron$Heme  <- Iron[,"intake"] * Iron[,"second"] / 100
 	Heme  <- sum(Iron$Heme, na.rm = TRUE)

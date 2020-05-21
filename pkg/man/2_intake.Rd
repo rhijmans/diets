@@ -19,16 +19,16 @@ nutrientIntake(consumption, content, weight=NULL, verbose=TRUE)
 \arguments{
   \item{consumption}{data.frame. Must contain variables "group" and "value". "group" is used to join the \code{consumption} and \code{content} data.frames}
   \item{content}{data.frame. Must contain variables "group", "tag", "value", and "unit"}
-  \item{weight}{data.frame for merging by weight. Columns must include "group", "yield" and "edible"}
+  \item{weight}{data.frame for merging by weight. Columns must include "group" "edible" and "yield"}
   \item{verbose}{logical. If \code{TRUE} groups that are in consumption but not in conent are printed}
 }
 
 \details{
-Micronutrient tagnames are available at http://www.fao.org/infoods/infoods/standards-guidelines/food-component-identifiers-tagnames/en/
+Micronutrient tag names are available at http://www.fao.org/infoods/infoods/standards-guidelines/food-component-identifiers-tagnames/en/
 }
 
 \value{
-matrix
+data.frame that includes for each group the mass consumed and the amount of micronutrients conmsumed with that , both in (g/capita)/day
 }
 
 

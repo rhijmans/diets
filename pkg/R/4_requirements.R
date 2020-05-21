@@ -48,7 +48,7 @@ nutrient_requirements  <- function(pop, reqs){
 		reqs$pop[s & reqs$Sex == "Females"] <- sum(pop[j, "PopFemale"])		
 	}
 
-### PART 2 : Redistribution of the population : using educated guess as a proxy for womens physiological status and babies.
+### estimate women's physiological status and babies.
   ## Create variables with the one year old population by gender and both
 	POP_Y1  <- pop[pop[,"AgeGrpStart"] < 1, ]
 	POP_Y1  <- sum(POP_Y1$PopMale + POP_Y1$PopFemale)
@@ -62,17 +62,19 @@ nutrient_requirements  <- function(pop, reqs){
   ## Half for the 19 - 31 years.
 	reqs[p & reqs$AgeGrpStart == 19, "pop"] <- POP_Y1 * 0.5 * 0.75
 
-  ## Lactating woman popula`tion (assumed to be equal of the first year population)
+  ## Lactating woman population (assumed to be equal of the first year population)
 	l  <-  reqs$Sex == "Females" & reqs$PhysioStatus == "Lactation"
   ## 1/4 of the lactating population for the 2 extrem age groups : 14-19 years and 31-51 years.
 	reqs[l, "pop"]  <- (POP_Y1 * 0.25)
   ## Half for the 19 - 31 years.
 	reqs[l & reqs$AgeGrpStart == 19, "pop"]  <- POP_Y1 * 0.5
 
-	reqs$req <- reqs$pop * reqs$Req_MNutr_Val
-	a <- aggregate(reqs[, c("pop", "req"), drop=FALSE], reqs[, "Tagname", drop=FALSE], sum)
+	reqs$req <- reqs$pop * reqs$value
+	a <- aggregate(reqs[, c("pop", "req"), drop=FALSE], reqs[, "tag", drop=FALSE], sum)
+	a$req <- a$req / a$pop
+	a$pop <- NULL
 	return(a)
-
+	
 # RH the below just seemed too weird. 
 
   ### Add the pregnant/lactating population from their age group.

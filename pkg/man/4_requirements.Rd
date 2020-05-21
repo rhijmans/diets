@@ -11,7 +11,7 @@ Compute nutrient requirements for a population based on the age and sex distribu
 }
 
 \usage{
-nutrient_requirements(pop, reqs, aggregate=TRUE)
+nutrient_requirements(pop, reqs)
 }
 
 \arguments{
@@ -20,10 +20,9 @@ nutrient_requirements(pop, reqs, aggregate=TRUE)
 }
 
 \details{
-Pregnant women are assumed to be 3/4 of the 1 year old population.
-Lactating women are assumed to be the 1 year old population.
+The number of pregnant women is assumed to be equal to 3/4 of the 1 year old population.
+The number of lactating women is assumed to be equal to the 1 year old population.
 
-Partition of the population groups into the 3 age groups are assumed to be 1/4 for 14-19 years, 31-51 years and 1/2 for 19-31 years. 
 Micronutrient tagname are available at "http://www.fao.org/infoods/infoods/standards-guidelines/food-component-identifiers-tagnames/en/"
 }
 
@@ -31,22 +30,16 @@ Micronutrient tagname are available at "http://www.fao.org/infoods/infoods/stand
 data.frame
 }
 
-\author{
-Eric Massiot, Ty Beal, Robert Hijmans
-}
-
-
-\seealso{
-\code{\link{help}}
-}
-
 \examples{
+# standard daily requirements in g 
 req <- readRDS(system.file("ex/reqs.rds", package = "diets"))
 reqrda <- readRDS(system.file("ex/reqs_rda.rds", package = "diets"))
 
 pop <- readRDS(system.file("ex/rwa_pop.rds", package = "diets"))
 
 popreq <- nutrient_requirements(pop, reqrda)
+head(popreq)
+
 }
 
 

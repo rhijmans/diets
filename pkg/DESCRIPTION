@@ -2,7 +2,8 @@ Package: diets
 Type: Package
 Title: Estimate Dietary Quality
 Version: 0.5
-Date: 2020-05-18
+Date: 2020-05-20
+Depends: R (>= 3.5.0)
 Maintainer: <r.hijmans@gmail.com>
 Description: Estimate micronutrient deficiencies for groups of people from their average food intake.
 License: GPL (>=3)
