@@ -8,9 +8,11 @@ scripts/**/*.txt
 scripts/**/*.pdf
 scripts/**/*.zip
 old/
-# zip files
-*.zip
 
+diets.pdf
+diets.html
+
+*.zip
 *.tar.gz
 *Rcheck/
 *.Rhistory

@@ -1,0 +1,151 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  chunk_output_type: console
+---
+# Diets
+
+## Installation
+You can install the diets package like this 
+
+```
+install.packages("remotes")
+remotes::install_github("rhijmans/diets/pkg")
+```
+
+## Example run
+
+
+### Nutrient content of food groups 
+
+You can speficy a continent to adjust the proportion of items in a food goup, e.g. different vegetables and fruits.
+
+```{r}
+library(diets)
+content <- nutrientContent(continent="Africa", redpalmoil=0.5, orangesweetpot=0.2)
+head(content)
+```
+
+The table is in "long format" (all values are in one column). For each food group there are many "tags" that indicate the nutrients.
+```{r}
+unique(content$tag)
+```
+
+The unit is (generally) permille (1/1000)
+```{r}
+table(content$unit)
+```
+
+You can fortify the food. We provide some example data (it is real data). Here I show it for Senegal
+
+```{r}
+fort <- readRDS(system.file("ex/fortification.rds", package="diets"))
+fort_sen <- fort[fort$area == "Senegal", ]
+fort_sen
+
+fcontent <- fortify(content, fort_sen)
+
+# see the change
+content[content$group=="Wheat and products" & content$tag=="ZN", ]
+fort_sen[fort_sen$group=="Wheat and products" & fort_sen$tag=="ZN", ]
+fcontent[fcontent$group=="Wheat and products" & fcontent$tag=="ZN", ]
+```
+
+### nutrient intake
+
+First get conumption data. Here a FBS for Rwanda
+
+```{r}
+consumption <- readRDS(system.file("ex/rwa_FBS.rds", package = "diets"))
+head(consumption)
+consumption <- consumption[consumption$Element == "Food supply (kcal/capita/day)", c("Item", "Value")]
+colnames(consumption) <- c("group", "value")
+# consumption by food group in (kcal/capita) / day
+head(consumption) 
+```
+
+Now combine that with the nutrient content data to to get nutrient intake.
+
+```{r}
+intake  <- nutrientIntake(consumption, content)
+```
+
+
+### adjust intake
+
+You can adjust the intake for Ca, Fe and Zn 
+
+Add Ca from water 
+
+```{r}
+intake <- add_Ca(intake)
+```
+
+Adjust Ca based on animal protein consumption
+```{r}
+intake <- adjust_Ca(intake)
+```
+
+Adjust Zn based for phytates based on Millar formula 
+```{r}
+intake <- adjust_Zn(intake)
+```
+
+Adjust Fe based on the amount of meat consumed
+```{r}
+iron <- readRDS(system.file("ex/NHemeIron.rds", package="diets"))
+intake <- adjust_Fe(intake, iron)
+```
+
+
+### nutrient requirements
+
+Get standard requirements 
+
+```{r}
+reqrda <- readRDS(system.file("ex/reqs_rda.rds", package = "diets"))
+head(reqrda)
+```
+
+Get population data (by age, sex)
+
+```{r}
+pop <- readRDS(system.file("ex/rwa_pop.rds", package = "diets"))
+head(pop)
+```
+
+Compute requirements for this population
+
+```{r}
+popreq <- nutrient_requirements(pop, reqrda)
+head(popreq)
+```
+
+### deficiencies
+
+Deficiencies are estimated using a coefficient of variation (if not provided, a default of 0.3 is used)
+
+```{r}
+CV <- readRDS(system.file("ex/CV.rds", package = "diets"))
+head(CV)
+```
+
+
+And here we go:
+
+```{r}
+d <- deficiencies(intake, popreq, CV)
+head(d)
+```
+
+Plot
+
+```{r, fig.height=10}
+par(mai=c(1,2,1,1))
+barplot(d$deficiency, horiz=TRUE, names.arg=d$tag, las=1, cex.names=.66, col=rainbow(30))
+```
+
+I have not checked if this is correct (and why not...).
+
