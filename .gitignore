@@ -2,11 +2,9 @@ scripts/FBS
 FBS.rds
 scripts/RWA_FBS.rds
 scripts/*.rds
-scripts/**/*.rds
-scripts/**/*.csv
-scripts/**/*.txt
-scripts/**/*.pdf
-scripts/**/*.zip
+scripts/process/*
+scripts/pkg/*
+scripts/*.rds
 old/
 
 diets.pdf

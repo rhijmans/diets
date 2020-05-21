@@ -28,7 +28,7 @@
 }
 
 
-.fixUSDA <- function(USDSA_Mnutr) {
+.fixUSDA <- function(USDA_MNutr) {
 ## Change Units name of Kcal
 	i  <- USDA_MNutr$Units == "kcal"
 	sum(i)

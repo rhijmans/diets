@@ -1,6 +1,8 @@
 
 setwd("C:/github/diets/scripts")
 
+dir.create("pkg", FALSE)
+dir.create("process", FALSE)
 ####
 #### Adjusted Food Comp Table
 ####

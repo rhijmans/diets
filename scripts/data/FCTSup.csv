@@ -1,0 +1,828 @@
+WA_NDB_No,WA_Shrt_Desc, Edible ,Tagname,NutrDesc,Units,Nutr_Val
+02_004,Cassava flour,90,ASH,Ash,g,2.25
+02_004,Cassava flour,90,CA,"Calcium, Ca",mg,137.5
+02_004,Cassava flour,90,CARTB,"Carotene, beta",mcg,
+02_004,Cassava flour,90,CARTBEQ,"Carotene equivalent, beta",mcg,
+02_004,Cassava flour,90,CHOCDF,Carbohydrate,g,78.8
+02_004,Cassava flour,90,CU,"Copper, Cu",mg,0.22
+02_004,Cassava flour,90,ENERC_KCAL,Energy,kcal,335
+02_004,Cassava flour,90,ENERC_KJ,Energy,kJ,1420
+02_004,Cassava flour,90,FAT,Total lipid (fat),g,0.48
+02_004,Cassava flour,90,FE,"Iron, Fe",mg,1.5
+02_004,Cassava flour,90,FIBTG,"Fiber, total dietary",g,3.9
+02_004,Cassava flour,90,FOL,Folate,mcg,47
+02_004,Cassava flour,90,K,"Potassium, K",mg,586.7
+02_004,Cassava flour,90,MG,"Magnesium, Mg",mg,45.46
+02_004,Cassava flour,90,NA,"Sodium, Na",mg,30.31
+02_004,Cassava flour,90,NIA,Niacin,mg,1.23
+02_004,Cassava flour,90,P,"Phosphorus, P",mg,102.33
+02_004,Cassava flour,90,PROCNT,Protein,g,1.89
+02_004,Cassava flour,90,RETOL,Retinol,mcg,0
+02_004,Cassava flour,90,RIBF,Riboflavin,mg,0.11
+02_004,Cassava flour,90,THIA,Thiamin,mg,0.07
+02_004,Cassava flour,90,VITA_RAE,"Vitamin A, RAE",mcg,
+02_004,Cassava flour,90,VITB12,Vitamin B-12,mcg,0
+02_004,Cassava flour,90,VITB6A,Vitamin B-6,mg,0.17
+02_004,Cassava flour,90,VITC,"Vitamin C, total ascorbic acid",mg,4
+02_004,Cassava flour,90,VITD,Vitamin D,mcg,0
+02_004,Cassava flour,90,VITE,Vitamin E,mg,0.35
+02_004,Cassava flour,90,WATER,Water,g,12.71
+02_004,Cassava flour,90,ZN,"Zinc, Zn",mg,0.74
+02_021,"Cassava sweet, tuber, dried",90,ASH,Ash,g,2.9
+02_021,"Cassava sweet, tuber, dried",90,CA,"Calcium, Ca",mg,121
+02_021,"Cassava sweet, tuber, dried",90,CARTB,"Carotene, beta",mcg,
+02_021,"Cassava sweet, tuber, dried",90,CARTBEQ,"Carotene equivalent, beta",mcg,
+02_021,"Cassava sweet, tuber, dried",90,CHOCDF,Carbohydrate,g,82.52
+02_021,"Cassava sweet, tuber, dried",90,CU,"Copper, Cu",mg,0.23
+02_021,"Cassava sweet, tuber, dried",90,ENERC_KCAL,Energy,kcal,348
+02_021,"Cassava sweet, tuber, dried",90,ENERC_KJ,Energy,kJ,1480
+02_021,"Cassava sweet, tuber, dried",90,FAT,Total lipid (fat),g,0.5
+02_021,"Cassava sweet, tuber, dried",90,FE,"Iron, Fe",mg,1.6
+02_021,"Cassava sweet, tuber, dried",90,FIBTG,"Fiber, total dietary",g,4.08
+02_021,"Cassava sweet, tuber, dried",90,FOL,Folate,mcg,48
+02_021,"Cassava sweet, tuber, dried",90,K,"Potassium, K",mg,613.65
+02_021,"Cassava sweet, tuber, dried",90,MG,"Magnesium, Mg",mg,47.55
+02_021,"Cassava sweet, tuber, dried",90,NA,"Sodium, Na",mg,31.7
+02_021,"Cassava sweet, tuber, dried",90,NIA,Niacin,mg,1.5
+02_021,"Cassava sweet, tuber, dried",90,P,"Phosphorus, P",mg,118
+02_021,"Cassava sweet, tuber, dried",90,PROCNT,Protein,g,1.3
+02_021,"Cassava sweet, tuber, dried",90,RETOL,Retinol,mcg,0
+02_021,"Cassava sweet, tuber, dried",90,RIBF,Riboflavin,mg,0.11
+02_021,"Cassava sweet, tuber, dried",90,THIA,Thiamin,mg,0.08
+02_021,"Cassava sweet, tuber, dried",90,VITA_RAE,"Vitamin A, RAE",mcg,
+02_021,"Cassava sweet, tuber, dried",90,VITB12,Vitamin B-12,mcg,0
+02_021,"Cassava sweet, tuber, dried",90,VITB6A,Vitamin B-6,mg,0.18
+02_021,"Cassava sweet, tuber, dried",90,VITC,"Vitamin C, total ascorbic acid",mg,4.7
+02_021,"Cassava sweet, tuber, dried",90,VITD,Vitamin D,mcg,0
+02_021,"Cassava sweet, tuber, dried",90,VITE,Vitamin E,mg,0.43
+02_021,"Cassava sweet, tuber, dried",90,WATER,Water,g,8.7
+02_021,"Cassava sweet, tuber, dried",90,ZN,"Zinc, Zn",mg,0.77
+02_003,"Cassava, tuber, boiled* (without salt)",90,ASH,Ash,g,1.02
+02_003,"Cassava, tuber, boiled* (without salt)",90,CA,"Calcium, Ca",mg,42.83
+02_003,"Cassava, tuber, boiled* (without salt)",90,CARTB,"Carotene, beta",mcg,
+02_003,"Cassava, tuber, boiled* (without salt)",90,CARTBEQ,"Carotene equivalent, beta",mcg,15
+02_003,"Cassava, tuber, boiled* (without salt)",90,CHOCDF,Carbohydrate,g,37.43
+02_003,"Cassava, tuber, boiled* (without salt)",90,CU,"Copper, Cu",mg,0.09
+02_003,"Cassava, tuber, boiled* (without salt)",90,ENERC_KCAL,Energy,kcal,161
+02_003,"Cassava, tuber, boiled* (without salt)",90,ENERC_KJ,Energy,kJ,682
+02_003,"Cassava, tuber, boiled* (without salt)",90,FAT,Total lipid (fat),g,0.27
+02_003,"Cassava, tuber, boiled* (without salt)",90,FE,"Iron, Fe",mg,0.7
+02_003,"Cassava, tuber, boiled* (without salt)",90,FIBTG,"Fiber, total dietary",g,1.89
+02_003,"Cassava, tuber, boiled* (without salt)",90,FOL,Folate,mcg,15.92
+02_003,"Cassava, tuber, boiled* (without salt)",90,K,"Potassium, K",mg,228.21
+02_003,"Cassava, tuber, boiled* (without salt)",90,MG,"Magnesium, Mg",mg,19.89
+02_003,"Cassava, tuber, boiled* (without salt)",90,NA,"Sodium, Na",mg,11.79
+02_003,"Cassava, tuber, boiled* (without salt)",90,NIA,Niacin,mg,0.53
+02_003,"Cassava, tuber, boiled* (without salt)",90,P,"Phosphorus, P",mg,45.52
+02_003,"Cassava, tuber, boiled* (without salt)",90,PROCNT,Protein,g,1.21
+02_003,"Cassava, tuber, boiled* (without salt)",90,RETOL,Retinol,mcg,0
+02_003,"Cassava, tuber, boiled* (without salt)",90,RIBF,Riboflavin,mg,0.05
+02_003,"Cassava, tuber, boiled* (without salt)",90,THIA,Thiamin,mg,0.03
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITA_RAE,"Vitamin A, RAE",mcg,1.25
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITB12,Vitamin B-12,mcg,0
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITB6A,Vitamin B-6,mg,0.07
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITC,"Vitamin C, total ascorbic acid",mg,22
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITD,Vitamin D,mcg,0
+02_003,"Cassava, tuber, boiled* (without salt)",90,VITE,Vitamin E,mg,0.2
+02_003,"Cassava, tuber, boiled* (without salt)",90,WATER,Water,g,58.17
+02_003,"Cassava, tuber, boiled* (without salt)",90,ZN,"Zinc, Zn",mg,0.32
+02_002,"Cassava, tuber, dried",90,ASH,Ash,g,2.5
+02_002,"Cassava, tuber, dried",90,CA,"Calcium, Ca",mg,102
+02_002,"Cassava, tuber, dried",90,CARTB,"Carotene, beta",mcg,
+02_002,"Cassava, tuber, dried",90,CARTBEQ,"Carotene equivalent, beta",mcg,
+02_002,"Cassava, tuber, dried",90,CHOCDF,Carbohydrate,g,81.36
+02_002,"Cassava, tuber, dried",90,CU,"Copper, Cu",mg,0.22
+02_002,"Cassava, tuber, dried",90,ENERC_KCAL,Energy,kcal,347
+02_002,"Cassava, tuber, dried",90,ENERC_KJ,Energy,kJ,1470
+02_002,"Cassava, tuber, dried",90,FAT,Total lipid (fat),g,0.6
+02_002,"Cassava, tuber, dried",90,FE,"Iron, Fe",mg,1.6
+02_002,"Cassava, tuber, dried",90,FIBTG,"Fiber, total dietary",g,4.04
+02_002,"Cassava, tuber, dried",90,FOL,Folate,mcg,47
+02_002,"Cassava, tuber, dried",90,K,"Potassium, K",mg,608.94
+02_002,"Cassava, tuber, dried",90,MG,"Magnesium, Mg",mg,47.19
+02_002,"Cassava, tuber, dried",90,NA,"Sodium, Na",mg,31.46
+02_002,"Cassava, tuber, dried",90,NIA,Niacin,mg,1.5
+02_002,"Cassava, tuber, dried",90,P,"Phosphorus, P",mg,98
+02_002,"Cassava, tuber, dried",90,PROCNT,Protein,g,2.1
+02_002,"Cassava, tuber, dried",90,RETOL,Retinol,mcg,0
+02_002,"Cassava, tuber, dried",90,RIBF,Riboflavin,mg,0.11
+02_002,"Cassava, tuber, dried",90,THIA,Thiamin,mg,0.08
+02_002,"Cassava, tuber, dried",90,VITA_RAE,"Vitamin A, RAE",mcg,
+02_002,"Cassava, tuber, dried",90,VITB12,Vitamin B-12,mcg,0
+02_002,"Cassava, tuber, dried",90,VITB6A,Vitamin B-6,mg,0.18
+02_002,"Cassava, tuber, dried",90,VITC,"Vitamin C, total ascorbic acid",mg,5
+02_002,"Cassava, tuber, dried",90,VITD,Vitamin D,mcg,0
+02_002,"Cassava, tuber, dried",90,VITE,Vitamin E,mg,0.43
+02_002,"Cassava, tuber, dried",90,WATER,Water,g,9.4
+02_002,"Cassava, tuber, dried",90,ZN,"Zinc, Zn",mg,0.76
+02_001,"Cassava, tuber, raw",90,ASH,Ash,g,0.97
+02_001,"Cassava, tuber, raw",90,CA,"Calcium, Ca",mg,42.83
+02_001,"Cassava, tuber, raw",90,CARTB,"Carotene, beta",mcg,
+02_001,"Cassava, tuber, raw",90,CARTBEQ,"Carotene equivalent, beta",mcg,15
+02_001,"Cassava, tuber, raw",90,CHOCDF,Carbohydrate,g,35.56
+02_001,"Cassava, tuber, raw",90,CU,"Copper, Cu",mg,0.1
+02_001,"Cassava, tuber, raw",90,ENERC_KCAL,Energy,kcal,153
+02_001,"Cassava, tuber, raw",90,ENERC_KJ,Energy,kJ,648
+02_001,"Cassava, tuber, raw",90,FAT,Total lipid (fat),g,0.26
+02_001,"Cassava, tuber, raw",90,FE,"Iron, Fe",mg,0.7
+02_001,"Cassava, tuber, raw",90,FIBTG,"Fiber, total dietary",g,1.8
+02_001,"Cassava, tuber, raw",90,FOL,Folate,mcg,24
+02_001,"Cassava, tuber, raw",90,K,"Potassium, K",mg,271
+02_001,"Cassava, tuber, raw",90,MG,"Magnesium, Mg",mg,21
+02_001,"Cassava, tuber, raw",90,NA,"Sodium, Na",mg,14
+02_001,"Cassava, tuber, raw",90,NIA,Niacin,mg,0.68
+02_001,"Cassava, tuber, raw",90,P,"Phosphorus, P",mg,46.5
+02_001,"Cassava, tuber, raw",90,PROCNT,Protein,g,1.15
+02_001,"Cassava, tuber, raw",90,RETOL,Retinol,mcg,0
+02_001,"Cassava, tuber, raw",90,RIBF,Riboflavin,mg,0.05
+02_001,"Cassava, tuber, raw",90,THIA,Thiamin,mg,0.04
+02_001,"Cassava, tuber, raw",90,VITA_RAE,"Vitamin A, RAE",mcg,1.25
+02_001,"Cassava, tuber, raw",90,VITB12,Vitamin B-12,mcg,0
+02_001,"Cassava, tuber, raw",90,VITB6A,Vitamin B-6,mg,0.09
+02_001,"Cassava, tuber, raw",90,VITC,"Vitamin C, total ascorbic acid",mg,30
+02_001,"Cassava, tuber, raw",90,VITD,Vitamin D,mcg,0
+02_001,"Cassava, tuber, raw",90,VITE,Vitamin E,mg,0.19
+02_001,"Cassava, tuber, raw",90,WATER,Water,g,60.26
+02_001,"Cassava, tuber, raw",90,ZN,"Zinc, Zn",mg,0.34
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,ASH,Ash,g,0.92
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,CA,"Calcium, Ca",mg,21.25
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,28.88
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.18
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,147
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,622
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,FAT,Total lipid (fat),g,1.3
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,FE,"Iron, Fe",mg,4.1
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,2.6
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,FOL,Folate,mcg,8.46
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,K,"Potassium, K",mg,111
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,180.78
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,NA,"Sodium, Na",mg,2.5
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,NIA,Niacin,mg,0.6
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,P,"Phosphorus, P",mg,95
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,PROCNT,Protein,g,3.74
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.03
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,THIA,Thiamin,mg,0.07
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.19
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,VITE,Vitamin E,mg,0.02
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,WATER,Water,g,62.63
+01_049,"Fonio, black, whole grain, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,1.54
+01_002,"Fonio, black, whole grain, raw",100,ASH,Ash,g,2.2
+01_002,"Fonio, black, whole grain, raw",100,CA,"Calcium, Ca",mg,51
+01_002,"Fonio, black, whole grain, raw",100,CARTB,"Carotene, beta",mcg,
+01_002,"Fonio, black, whole grain, raw",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_002,"Fonio, black, whole grain, raw",100,CHOCDF,Carbohydrate,g,69.4
+01_002,"Fonio, black, whole grain, raw",100,CU,"Copper, Cu",mg,0.44
+01_002,"Fonio, black, whole grain, raw",100,ENERC_KCAL,Energy,kcal,353
+01_002,"Fonio, black, whole grain, raw",100,ENERC_KJ,Energy,kJ,1490
+01_002,"Fonio, black, whole grain, raw",100,FAT,Total lipid (fat),g,3
+01_002,"Fonio, black, whole grain, raw",100,FE,"Iron, Fe",mg,10
+01_002,"Fonio, black, whole grain, raw",100,FIBTG,"Fiber, total dietary",g,6.2
+01_002,"Fonio, black, whole grain, raw",100,FOL,Folate,mcg,29
+01_002,"Fonio, black, whole grain, raw",100,K,"Potassium, K",mg,340
+01_002,"Fonio, black, whole grain, raw",100,MG,"Magnesium, Mg",mg,433.87
+01_002,"Fonio, black, whole grain, raw",100,NA,"Sodium, Na",mg,7.5
+01_002,"Fonio, black, whole grain, raw",100,NIA,Niacin,mg,1.72
+01_002,"Fonio, black, whole grain, raw",100,P,"Phosphorus, P",mg,234
+01_002,"Fonio, black, whole grain, raw",100,PROCNT,Protein,g,8.9
+01_002,"Fonio, black, whole grain, raw",100,RETOL,Retinol,mcg,0
+01_002,"Fonio, black, whole grain, raw",100,RIBF,Riboflavin,mg,0.1
+01_002,"Fonio, black, whole grain, raw",100,THIA,Thiamin,mg,0.26
+01_002,"Fonio, black, whole grain, raw",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_002,"Fonio, black, whole grain, raw",100,VITB12,Vitamin B-12,mcg,0
+01_002,"Fonio, black, whole grain, raw",100,VITB6A,Vitamin B-6,mg,0.74
+01_002,"Fonio, black, whole grain, raw",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_002,"Fonio, black, whole grain, raw",100,VITD,Vitamin D,mcg,0
+01_002,"Fonio, black, whole grain, raw",100,VITE,Vitamin E,mg,0.05
+01_002,"Fonio, black, whole grain, raw",100,WATER,Water,g,10.3
+01_002,"Fonio, black, whole grain, raw",100,ZN,"Zinc, Zn",mg,3.8
+01_051,"Fonio, husked grains, boiled* (without salt)",100,ASH,Ash,g,0.51
+01_051,"Fonio, husked grains, boiled* (without salt)",100,CA,"Calcium, Ca",mg,11.53
+01_051,"Fonio, husked grains, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,
+01_051,"Fonio, husked grains, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_051,"Fonio, husked grains, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,31.67
+01_051,"Fonio, husked grains, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.18
+01_051,"Fonio, husked grains, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,145
+01_051,"Fonio, husked grains, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,614
+01_051,"Fonio, husked grains, boiled* (without salt)",100,FAT,Total lipid (fat),g,0.51
+01_051,"Fonio, husked grains, boiled* (without salt)",100,FE,"Iron, Fe",mg,0.73
+01_051,"Fonio, husked grains, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,0.93
+01_051,"Fonio, husked grains, boiled* (without salt)",100,FOL,Folate,mcg,8.46
+01_051,"Fonio, husked grains, boiled* (without salt)",100,K,"Potassium, K",mg,58
+01_051,"Fonio, husked grains, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,50.46
+01_051,"Fonio, husked grains, boiled* (without salt)",100,NA,"Sodium, Na",mg,4.61
+01_051,"Fonio, husked grains, boiled* (without salt)",100,NIA,Niacin,mg,0.36
+01_051,"Fonio, husked grains, boiled* (without salt)",100,P,"Phosphorus, P",mg,42
+01_051,"Fonio, husked grains, boiled* (without salt)",100,PROCNT,Protein,g,2.89
+01_051,"Fonio, husked grains, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_051,"Fonio, husked grains, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.07
+01_051,"Fonio, husked grains, boiled* (without salt)",100,THIA,Thiamin,mg,0.05
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,0.04
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.19
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_051,"Fonio, husked grains, boiled* (without salt)",100,VITE,Vitamin E,mg,0.02
+01_051,"Fonio, husked grains, boiled* (without salt)",100,WATER,Water,g,63.49
+01_051,"Fonio, husked grains, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.82
+01_050,"Fonio, husked grains, raw (bran removed)",100,ASH,Ash,g,1.21
+01_050,"Fonio, husked grains, raw (bran removed)",100,CA,"Calcium, Ca",mg,27.68
+01_050,"Fonio, husked grains, raw (bran removed)",100,CARTB,"Carotene, beta",mcg,1
+01_050,"Fonio, husked grains, raw (bran removed)",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+01_050,"Fonio, husked grains, raw (bran removed)",100,CHOCDF,Carbohydrate,g,76.1
+01_050,"Fonio, husked grains, raw (bran removed)",100,CU,"Copper, Cu",mg,0.43
+01_050,"Fonio, husked grains, raw (bran removed)",100,ENERC_KCAL,Energy,kcal,347
+01_050,"Fonio, husked grains, raw (bran removed)",100,ENERC_KJ,Energy,kJ,1470
+01_050,"Fonio, husked grains, raw (bran removed)",100,FAT,Total lipid (fat),g,1.21
+01_050,"Fonio, husked grains, raw (bran removed)",100,FE,"Iron, Fe",mg,1.75
+01_050,"Fonio, husked grains, raw (bran removed)",100,FIBTG,"Fiber, total dietary",g,2.24
+01_050,"Fonio, husked grains, raw (bran removed)",100,FOL,Folate,mcg,29
+01_050,"Fonio, husked grains, raw (bran removed)",100,K,"Potassium, K",mg,178
+01_050,"Fonio, husked grains, raw (bran removed)",100,MG,"Magnesium, Mg",mg,121.1
+01_050,"Fonio, husked grains, raw (bran removed)",100,NA,"Sodium, Na",mg,13.84
+01_050,"Fonio, husked grains, raw (bran removed)",100,NIA,Niacin,mg,1.15
+01_050,"Fonio, husked grains, raw (bran removed)",100,P,"Phosphorus, P",mg,103.8
+01_050,"Fonio, husked grains, raw (bran removed)",100,PROCNT,Protein,g,6.94
+01_050,"Fonio, husked grains, raw (bran removed)",100,RETOL,Retinol,mcg,0
+01_050,"Fonio, husked grains, raw (bran removed)",100,RIBF,Riboflavin,mg,0.22
+01_050,"Fonio, husked grains, raw (bran removed)",100,THIA,Thiamin,mg,0.17
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITA_RAE,"Vitamin A, RAE",mcg,0.11
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITB12,Vitamin B-12,mcg,0
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITB6A,Vitamin B-6,mg,0.74
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITD,Vitamin D,mcg,0
+01_050,"Fonio, husked grains, raw (bran removed)",100,VITE,Vitamin E,mg,0.05
+01_050,"Fonio, husked grains, raw (bran removed)",100,WATER,Water,g,12.38
+01_050,"Fonio, husked grains, raw (bran removed)",100,ZN,"Zinc, Zn",mg,2.02
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,ASH,Ash,g,0.9
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,CA,"Calcium, Ca",mg,16.67
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,28.9
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.18
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,145
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,613
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,FAT,Total lipid (fat),g,1.3
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,FE,"Iron, Fe",mg,3.5
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,3.1
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,FOL,Folate,mcg,8.52
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,K,"Potassium, K",mg,110
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,179.17
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,NA,"Sodium, Na",mg,2.48
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,NIA,Niacin,mg,0.57
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,P,"Phosphorus, P",mg,77
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,PROCNT,Protein,g,2.93
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.03
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,THIA,Thiamin,mg,0.07
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.19
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,VITE,Vitamin E,mg,0.02
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,WATER,Water,g,62.96
+01_003,"Fonio, white, whole grain, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.61
+01_001,"Fonio, white, whole grain, raw",100,ASH,Ash,g,2.1
+01_001,"Fonio, white, whole grain, raw",100,CA,"Calcium, Ca",mg,40
+01_001,"Fonio, white, whole grain, raw",100,CARTB,"Carotene, beta",mcg,
+01_001,"Fonio, white, whole grain, raw",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_001,"Fonio, white, whole grain, raw",100,CHOCDF,Carbohydrate,g,69.3
+01_001,"Fonio, white, whole grain, raw",100,CU,"Copper, Cu",mg,0.44
+01_001,"Fonio, white, whole grain, raw",100,ENERC_KCAL,Energy,kcal,348
+01_001,"Fonio, white, whole grain, raw",100,ENERC_KJ,Energy,kJ,1470
+01_001,"Fonio, white, whole grain, raw",100,FAT,Total lipid (fat),g,3.1
+01_001,"Fonio, white, whole grain, raw",100,FE,"Iron, Fe",mg,8.5
+01_001,"Fonio, white, whole grain, raw",100,FIBTG,"Fiber, total dietary",g,7.4
+01_001,"Fonio, white, whole grain, raw",100,FOL,Folate,mcg,29.21
+01_001,"Fonio, white, whole grain, raw",100,K,"Potassium, K",mg,336.97
+01_001,"Fonio, white, whole grain, raw",100,MG,"Magnesium, Mg",mg,430
+01_001,"Fonio, white, whole grain, raw",100,NA,"Sodium, Na",mg,7.43
+01_001,"Fonio, white, whole grain, raw",100,NIA,Niacin,mg,1.7
+01_001,"Fonio, white, whole grain, raw",100,P,"Phosphorus, P",mg,191
+01_001,"Fonio, white, whole grain, raw",100,PROCNT,Protein,g,7.03
+01_001,"Fonio, white, whole grain, raw",100,RETOL,Retinol,mcg,0
+01_001,"Fonio, white, whole grain, raw",100,RIBF,Riboflavin,mg,0.1
+01_001,"Fonio, white, whole grain, raw",100,THIA,Thiamin,mg,0.25
+01_001,"Fonio, white, whole grain, raw",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_001,"Fonio, white, whole grain, raw",100,VITB12,Vitamin B-12,mcg,0
+01_001,"Fonio, white, whole grain, raw",100,VITB6A,Vitamin B-6,mg,0.73
+01_001,"Fonio, white, whole grain, raw",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_001,"Fonio, white, whole grain, raw",100,VITD,Vitamin D,mcg,0
+01_001,"Fonio, white, whole grain, raw",100,VITE,Vitamin E,mg,0.05
+01_001,"Fonio, white, whole grain, raw",100,WATER,Water,g,11.1
+01_001,"Fonio, white, whole grain, raw",100,ZN,"Zinc, Zn",mg,1.5
+11_004,"Palm oil, red",100,ASH,Ash,g,0
+11_004,"Palm oil, red",100,CA,"Calcium, Ca",mg,0
+11_004,"Palm oil, red",100,CARTB,"Carotene, beta",mcg,
+11_004,"Palm oil, red",100,CARTBEQ,"Carotene equivalent, beta",mcg,30000
+11_004,"Palm oil, red",100,CHOCDF,Carbohydrate,g,0
+11_004,"Palm oil, red",100,CU,"Copper, Cu",mg,0
+11_004,"Palm oil, red",100,ENERC_KCAL,Energy,kcal,900
+11_004,"Palm oil, red",100,ENERC_KJ,Energy,kJ,3700
+11_004,"Palm oil, red",100,FAT,Total lipid (fat),g,100
+11_004,"Palm oil, red",100,FE,"Iron, Fe",mg,0.01
+11_004,"Palm oil, red",100,FIBTG,"Fiber, total dietary",g,0
+11_004,"Palm oil, red",100,FOL,Folate,mcg,0
+11_004,"Palm oil, red",100,K,"Potassium, K",mg,0
+11_004,"Palm oil, red",100,MG,"Magnesium, Mg",mg,0
+11_004,"Palm oil, red",100,NA,"Sodium, Na",mg,0
+11_004,"Palm oil, red",100,NIA,Niacin,mg,0
+11_004,"Palm oil, red",100,P,"Phosphorus, P",mg,0
+11_004,"Palm oil, red",100,PROCNT,Protein,g,0
+11_004,"Palm oil, red",100,RETOL,Retinol,mcg,0
+11_004,"Palm oil, red",100,RIBF,Riboflavin,mg,0
+11_004,"Palm oil, red",100,THIA,Thiamin,mg,0
+11_004,"Palm oil, red",100,VITA_RAE,"Vitamin A, RAE",mcg,2500
+11_004,"Palm oil, red",100,VITB12,Vitamin B-12,mcg,0
+11_004,"Palm oil, red",100,VITB6A,Vitamin B-6,mg,0
+11_004,"Palm oil, red",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+11_004,"Palm oil, red",100,VITD,Vitamin D,mcg,0
+11_004,"Palm oil, red",100,VITE,Vitamin E,mg,15.94
+11_004,"Palm oil, red",100,WATER,Water,g,0
+11_004,"Palm oil, red",100,ZN,"Zinc, Zn",mg,0
+01_072,"Sorghum, flour, degermed",100,ASH,Ash,g,1.9
+01_072,"Sorghum, flour, degermed",100,CA,"Calcium, Ca",mg,12.23
+01_072,"Sorghum, flour, degermed",100,CARTB,"Carotene, beta",mcg,
+01_072,"Sorghum, flour, degermed",100,CARTBEQ,"Carotene equivalent, beta",mcg,1
+01_072,"Sorghum, flour, degermed",100,CHOCDF,Carbohydrate,g,70.4
+01_072,"Sorghum, flour, degermed",100,CU,"Copper, Cu",mg,0.22
+01_072,"Sorghum, flour, degermed",100,ENERC_KCAL,Energy,kcal,347
+01_072,"Sorghum, flour, degermed",100,ENERC_KJ,Energy,kJ,1470
+01_072,"Sorghum, flour, degermed",100,FAT,Total lipid (fat),g,1.69
+01_072,"Sorghum, flour, degermed",100,FE,"Iron, Fe",mg,3.8
+01_072,"Sorghum, flour, degermed",100,FIBTG,"Fiber, total dietary",g,4.65
+01_072,"Sorghum, flour, degermed",100,FOL,Folate,mcg,25
+01_072,"Sorghum, flour, degermed",100,K,"Potassium, K",mg,307.75
+01_072,"Sorghum, flour, degermed",100,MG,"Magnesium, Mg",mg,118.75
+01_072,"Sorghum, flour, degermed",100,NA,"Sodium, Na",mg,13.67
+01_072,"Sorghum, flour, degermed",100,NIA,Niacin,mg,1.37
+01_072,"Sorghum, flour, degermed",100,P,"Phosphorus, P",mg,284.99
+01_072,"Sorghum, flour, degermed",100,PROCNT,Protein,g,10.4
+01_072,"Sorghum, flour, degermed",100,RETOL,Retinol,mcg,0
+01_072,"Sorghum, flour, degermed",100,RIBF,Riboflavin,mg,0.12
+01_072,"Sorghum, flour, degermed",100,THIA,Thiamin,mg,0.18
+01_072,"Sorghum, flour, degermed",100,VITA_RAE,"Vitamin A, RAE",mcg,0.1
+01_072,"Sorghum, flour, degermed",100,VITB12,Vitamin B-12,mcg,0
+01_072,"Sorghum, flour, degermed",100,VITB6A,Vitamin B-6,mg,0.25
+01_072,"Sorghum, flour, degermed",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_072,"Sorghum, flour, degermed",100,VITD,Vitamin D,mcg,0
+01_072,"Sorghum, flour, degermed",100,VITE,Vitamin E,mg,0.26
+01_072,"Sorghum, flour, degermed",100,WATER,Water,g,11
+01_072,"Sorghum, flour, degermed",100,ZN,"Zinc, Zn",mg,2.14
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,ASH,Ash,g,1
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,CA,"Calcium, Ca",mg,10.04
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,6
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,26.3
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.16
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,143
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,606
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,FAT,Total lipid (fat),g,1.39
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,FE,"Iron, Fe",mg,1.5
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,4.1
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,FOL,Folate,mcg,8.54
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,K,"Potassium, K",mg,122
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,129.41
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,NA,"Sodium, Na",mg,4.56
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,NIA,Niacin,mg,1.1
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,P,"Phosphorus, P",mg,120
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,PROCNT,Protein,g,4.4
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.05
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,THIA,Thiamin,mg,0.1
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,0.52
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.07
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,VITE,Vitamin E,mg,0.46
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,WATER,Water,g,62.9
+01_042,"Sorghum, whole grain, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.72
+01_039,"Sorghum, whole grain, raw ",100,ASH,Ash,g,2.4
+01_039,"Sorghum, whole grain, raw ",100,CA,"Calcium, Ca",mg,24.11
+01_039,"Sorghum, whole grain, raw ",100,CARTB,"Carotene, beta",mcg,17
+01_039,"Sorghum, whole grain, raw ",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+01_039,"Sorghum, whole grain, raw ",100,CHOCDF,Carbohydrate,g,63.1
+01_039,"Sorghum, whole grain, raw ",100,CU,"Copper, Cu",mg,0.38
+01_039,"Sorghum, whole grain, raw ",100,ENERC_KCAL,Energy,kcal,344
+01_039,"Sorghum, whole grain, raw ",100,ENERC_KJ,Energy,kJ,1450
+01_039,"Sorghum, whole grain, raw ",100,FAT,Total lipid (fat),g,3.33
+01_039,"Sorghum, whole grain, raw ",100,FE,"Iron, Fe",mg,3.7
+01_039,"Sorghum, whole grain, raw ",100,FIBTG,"Fiber, total dietary",g,9.9
+01_039,"Sorghum, whole grain, raw ",100,FOL,Folate,mcg,29.29
+01_039,"Sorghum, whole grain, raw ",100,K,"Potassium, K",mg,376.51
+01_039,"Sorghum, whole grain, raw ",100,MG,"Magnesium, Mg",mg,310.59
+01_039,"Sorghum, whole grain, raw ",100,NA,"Sodium, Na",mg,13.67
+01_039,"Sorghum, whole grain, raw ",100,NIA,Niacin,mg,3.3
+01_039,"Sorghum, whole grain, raw ",100,P,"Phosphorus, P",mg,296.69
+01_039,"Sorghum, whole grain, raw ",100,PROCNT,Protein,g,10.5
+01_039,"Sorghum, whole grain, raw ",100,RETOL,Retinol,mcg,0
+01_039,"Sorghum, whole grain, raw ",100,RIBF,Riboflavin,mg,0.16
+01_039,"Sorghum, whole grain, raw ",100,THIA,Thiamin,mg,0.36
+01_039,"Sorghum, whole grain, raw ",100,VITA_RAE,"Vitamin A, RAE",mcg,1.39
+01_039,"Sorghum, whole grain, raw ",100,VITB12,Vitamin B-12,mcg,0
+01_039,"Sorghum, whole grain, raw ",100,VITB6A,Vitamin B-6,mg,0.25
+01_039,"Sorghum, whole grain, raw ",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_039,"Sorghum, whole grain, raw ",100,VITD,Vitamin D,mcg,0
+01_039,"Sorghum, whole grain, raw ",100,VITE,Vitamin E,mg,1.1
+01_039,"Sorghum, whole grain, raw ",100,WATER,Water,g,10.87
+01_039,"Sorghum, whole grain, raw ",100,ZN,"Zinc, Zn",mg,1.79
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,ASH,Ash,g,1
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,CA,"Calcium, Ca",mg,10
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,26.5
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.11
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,145
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,612
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,FAT,Total lipid (fat),g,1.46
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,FE,"Iron, Fe",mg,1.4
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,4.1
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,FOL,Folate,mcg,8.62
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,K,"Potassium, K",mg,126
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,130
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,NA,"Sodium, Na",mg,4.56
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,NIA,Niacin,mg,1.1
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,P,"Phosphorus, P",mg,120
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,PROCNT,Protein,g,4.4
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.05
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,THIA,Thiamin,mg,0.1
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.07
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,VITE,Vitamin E,mg,0.46
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,WATER,Water,g,62.54
+01_070,"Sorghum, whole grain, red, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.8
+01_041,"Sorghum, whole grain, red, raw",100,ASH,Ash,g,2.4
+01_041,"Sorghum, whole grain, red, raw",100,CA,"Calcium, Ca",mg,24
+01_041,"Sorghum, whole grain, red, raw",100,CARTB,"Carotene, beta",mcg,
+01_041,"Sorghum, whole grain, red, raw",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+01_041,"Sorghum, whole grain, red, raw",100,CHOCDF,Carbohydrate,g,63.6
+01_041,"Sorghum, whole grain, red, raw",100,CU,"Copper, Cu",mg,0.26
+01_041,"Sorghum, whole grain, red, raw",100,ENERC_KCAL,Energy,kcal,348
+01_041,"Sorghum, whole grain, red, raw",100,ENERC_KJ,Energy,kJ,1470
+01_041,"Sorghum, whole grain, red, raw",100,FAT,Total lipid (fat),g,3.5
+01_041,"Sorghum, whole grain, red, raw",100,FE,"Iron, Fe",mg,3.4
+01_041,"Sorghum, whole grain, red, raw",100,FIBTG,"Fiber, total dietary",g,9.9
+01_041,"Sorghum, whole grain, red, raw",100,FOL,Folate,mcg,29.54
+01_041,"Sorghum, whole grain, red, raw",100,K,"Potassium, K",mg,387.46
+01_041,"Sorghum, whole grain, red, raw",100,MG,"Magnesium, Mg",mg,311
+01_041,"Sorghum, whole grain, red, raw",100,NA,"Sodium, Na",mg,13.67
+01_041,"Sorghum, whole grain, red, raw",100,NIA,Niacin,mg,3.33
+01_041,"Sorghum, whole grain, red, raw",100,P,"Phosphorus, P",mg,296.67
+01_041,"Sorghum, whole grain, red, raw",100,PROCNT,Protein,g,10.5
+01_041,"Sorghum, whole grain, red, raw",100,RETOL,Retinol,mcg,0
+01_041,"Sorghum, whole grain, red, raw",100,RIBF,Riboflavin,mg,0.16
+01_041,"Sorghum, whole grain, red, raw",100,THIA,Thiamin,mg,0.36
+01_041,"Sorghum, whole grain, red, raw",100,VITA_RAE,"Vitamin A, RAE",mcg,
+01_041,"Sorghum, whole grain, red, raw",100,VITB12,Vitamin B-12,mcg,0
+01_041,"Sorghum, whole grain, red, raw",100,VITB6A,Vitamin B-6,mg,0.25
+01_041,"Sorghum, whole grain, red, raw",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_041,"Sorghum, whole grain, red, raw",100,VITD,Vitamin D,mcg,0
+01_041,"Sorghum, whole grain, red, raw",100,VITE,Vitamin E,mg,1.1
+01_041,"Sorghum, whole grain, red, raw",100,WATER,Water,g,10.1
+01_041,"Sorghum, whole grain, red, raw",100,ZN,"Zinc, Zn",mg,1.97
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,ASH,Ash,g,0.8
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,CA,"Calcium, Ca",mg,10
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,27.3
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.07
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,148
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,623
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,FAT,Total lipid (fat),g,1.63
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,FE,"Iron, Fe",mg,1.6
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,FIBTG,"Fiber, total dietary",g,4.1
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,FOL,Folate,mcg,8.68
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,K,"Potassium, K",mg,97
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,130
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,NA,"Sodium, Na",mg,4.56
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,NIA,Niacin,mg,1.12
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,P,"Phosphorus, P",mg,101
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,PROCNT,Protein,g,3.92
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.05
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,THIA,Thiamin,mg,0.1
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITB6A,Vitamin B-6,mg,0.07
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,VITE,Vitamin E,mg,0.46
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,WATER,Water,g,62.25
+01_071,"Sorghum, whole grain, white, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.84
+01_040,"Sorghum, whole grain, white, raw",100,ASH,Ash,g,2
+01_040,"Sorghum, whole grain, white, raw",100,CA,"Calcium, Ca",mg,24
+01_040,"Sorghum, whole grain, white, raw",100,CARTB,"Carotene, beta",mcg,
+01_040,"Sorghum, whole grain, white, raw",100,CARTBEQ,"Carotene equivalent, beta",mcg,0
+01_040,"Sorghum, whole grain, white, raw",100,CHOCDF,Carbohydrate,g,65.5
+01_040,"Sorghum, whole grain, white, raw",100,CU,"Copper, Cu",mg,0.18
+01_040,"Sorghum, whole grain, white, raw",100,ENERC_KCAL,Energy,kcal,354
+01_040,"Sorghum, whole grain, white, raw",100,ENERC_KJ,Energy,kJ,1550
+01_040,"Sorghum, whole grain, white, raw",100,FAT,Total lipid (fat),g,3.9
+01_040,"Sorghum, whole grain, white, raw",100,FE,"Iron, Fe",mg,3.9
+01_040,"Sorghum, whole grain, white, raw",100,FIBTG,"Fiber, total dietary",g,9.9
+01_040,"Sorghum, whole grain, white, raw",100,FOL,Folate,mcg,29.77
+01_040,"Sorghum, whole grain, white, raw",100,K,"Potassium, K",mg,298.07
+01_040,"Sorghum, whole grain, white, raw",100,MG,"Magnesium, Mg",mg,311
+01_040,"Sorghum, whole grain, white, raw",100,NA,"Sodium, Na",mg,13.67
+01_040,"Sorghum, whole grain, white, raw",100,NIA,Niacin,mg,3.35
+01_040,"Sorghum, whole grain, white, raw",100,P,"Phosphorus, P",mg,249.15
+01_040,"Sorghum, whole grain, white, raw",100,PROCNT,Protein,g,9.3
+01_040,"Sorghum, whole grain, white, raw",100,RETOL,Retinol,mcg,0
+01_040,"Sorghum, whole grain, white, raw",100,RIBF,Riboflavin,mg,0.17
+01_040,"Sorghum, whole grain, white, raw",100,THIA,Thiamin,mg,0.36
+01_040,"Sorghum, whole grain, white, raw",100,VITA_RAE,"Vitamin A, RAE",mcg,0
+01_040,"Sorghum, whole grain, white, raw",100,VITB12,Vitamin B-12,mcg,0
+01_040,"Sorghum, whole grain, white, raw",100,VITB6A,Vitamin B-6,mg,0.25
+01_040,"Sorghum, whole grain, white, raw",100,VITC,"Vitamin C, total ascorbic acid",mg,0
+01_040,"Sorghum, whole grain, white, raw",100,VITD,Vitamin D,mcg,0
+01_040,"Sorghum, whole grain, white, raw",100,VITE,Vitamin E,mg,1.1
+01_040,"Sorghum, whole grain, white, raw",100,WATER,Water,g,9.41
+01_040,"Sorghum, whole grain, white, raw",100,ZN,"Zinc, Zn",mg,2.08
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,ASH,Ash,g,0.9
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,CA,"Calcium, Ca",mg,24.38
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,CARTB,"Carotene, beta",mcg,
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,CARTBEQ,"Carotene equivalent, beta",mcg,4530
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,CHOCDF,Carbohydrate,g,24.52
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,CU,"Copper, Cu",mg,0.12
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,ENERC_KCAL,Energy,kcal,112
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,ENERC_KJ,Energy,kJ,475
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,FAT,Total lipid (fat),g,0.25
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,FE,"Iron, Fe",mg,1
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,FIBTG,"Fiber, total dietary",g,3.02
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,FOL,Folate,mcg,32.76
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,K,"Potassium, K",mg,264
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,MG,"Magnesium, Mg",mg,13.95
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,NA,"Sodium, Na",mg,15.2
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,NIA,Niacin,mg,0.49
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,P,"Phosphorus, P",mg,37.51
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,PROCNT,Protein,g,1.48
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,RETOL,Retinol,mcg,0
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,RIBF,Riboflavin,mg,0.04
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,THIA,Thiamin,mg,0.07
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITA_RAE,"Vitamin A, RAE",mcg,377.45
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITB12,Vitamin B-12,mcg,0
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITB6A,Vitamin B-6,mg,0.15
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITC,"Vitamin C, total ascorbic acid",mg,21.7
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITD,Vitamin D,mcg,0
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,VITE,Vitamin E,mg,0.23
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,WATER,Water,g,69.19
+02_012,"Sweet potato, deep yellow, boiled* (without salt)",90,ZN,"Zinc, Zn",mg,0.35
+02_011,"Sweet potato, deep yellow, raw",90,ASH,Ash,g,0.9
+02_011,"Sweet potato, deep yellow, raw",90,CA,"Calcium, Ca",mg,25.67
+02_011,"Sweet potato, deep yellow, raw",90,CARTB,"Carotene, beta",mcg,
+02_011,"Sweet potato, deep yellow, raw",90,CARTBEQ,"Carotene equivalent, beta",mcg,4770
+02_011,"Sweet potato, deep yellow, raw",90,CHOCDF,Carbohydrate,g,24.52
+02_011,"Sweet potato, deep yellow, raw",90,CU,"Copper, Cu",mg,0.13
+02_011,"Sweet potato, deep yellow, raw",90,ENERC_KCAL,Energy,kcal,112
+02_011,"Sweet potato, deep yellow, raw",90,ENERC_KJ,Energy,kJ,475
+02_011,"Sweet potato, deep yellow, raw",90,FAT,Total lipid (fat),g,0.25
+02_011,"Sweet potato, deep yellow, raw",90,FE,"Iron, Fe",mg,1.1
+02_011,"Sweet potato, deep yellow, raw",90,FIBTG,"Fiber, total dietary",g,3.02
+02_011,"Sweet potato, deep yellow, raw",90,FOL,Folate,mcg,52
+02_011,"Sweet potato, deep yellow, raw",90,K,"Potassium, K",mg,330
+02_011,"Sweet potato, deep yellow, raw",90,MG,"Magnesium, Mg",mg,15.5
+02_011,"Sweet potato, deep yellow, raw",90,NA,"Sodium, Na",mg,19
+02_011,"Sweet potato, deep yellow, raw",90,NIA,Niacin,mg,0.65
+02_011,"Sweet potato, deep yellow, raw",90,P,"Phosphorus, P",mg,40.33
+02_011,"Sweet potato, deep yellow, raw",90,PROCNT,Protein,g,1.48
+02_011,"Sweet potato, deep yellow, raw",90,RETOL,Retinol,mcg,0
+02_011,"Sweet potato, deep yellow, raw",90,RIBF,Riboflavin,mg,0.05
+02_011,"Sweet potato, deep yellow, raw",90,THIA,Thiamin,mg,0.09
+02_011,"Sweet potato, deep yellow, raw",90,VITA_RAE,"Vitamin A, RAE",mcg,397.22
+02_011,"Sweet potato, deep yellow, raw",90,VITB12,Vitamin B-12,mcg,0
+02_011,"Sweet potato, deep yellow, raw",90,VITB6A,Vitamin B-6,mg,0.2
+02_011,"Sweet potato, deep yellow, raw",90,VITC,"Vitamin C, total ascorbic acid",mg,31
+02_011,"Sweet potato, deep yellow, raw",90,VITD,Vitamin D,mcg,0
+02_011,"Sweet potato, deep yellow, raw",90,VITE,Vitamin E,mg,0.23
+02_011,"Sweet potato, deep yellow, raw",90,WATER,Water,g,69.83
+02_011,"Sweet potato, deep yellow, raw",90,ZN,"Zinc, Zn",mg,0.39
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,ASH,Ash,g,0.88
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,CA,"Calcium, Ca",mg,25.97
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,CARTB,"Carotene, beta",mcg,
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,CARTBEQ,"Carotene equivalent, beta",mcg,36.58
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,CHOCDF,Carbohydrate,g,25.3
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,CU,"Copper, Cu",mg,0.12
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,ENERC_KCAL,Energy,kcal,115
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,ENERC_KJ,Energy,kJ,486
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,FAT,Total lipid (fat),g,0.18
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,FE,"Iron, Fe",mg,1
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,FIBTG,"Fiber, total dietary",g,3
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,FOL,Folate,mcg,32.76
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,K,"Potassium, K",mg,365.62
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,MG,"Magnesium, Mg",mg,14.4
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,NA,"Sodium, Na",mg,16
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,NIA,Niacin,mg,0.48
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,P,"Phosphorus, P",mg,47.74
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,PROCNT,Protein,g,1.45
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,RETOL,Retinol,mcg,0
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,RIBF,Riboflavin,mg,0.04
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,THIA,Thiamin,mg,0.07
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITA_RAE,"Vitamin A, RAE",mcg,3.05
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITB12,Vitamin B-12,mcg,0
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITB6A,Vitamin B-6,mg,0.2
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITC,"Vitamin C, total ascorbic acid",mg,15.63
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITD,Vitamin D,mcg,0
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,VITE,Vitamin E,mg,0.17
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,WATER,Water,g,69.19
+02_023,"Sweet potato, pale yellow, boiled* (without salt)",90,ZN,"Zinc, Zn",mg,0.35
+02_022,"Sweet potato, pale yellow, raw",90,ASH,Ash,g,0.88
+02_022,"Sweet potato, pale yellow, raw",90,CA,"Calcium, Ca",mg,27.33
+02_022,"Sweet potato, pale yellow, raw",90,CARTB,"Carotene, beta",mcg,
+02_022,"Sweet potato, pale yellow, raw",90,CARTBEQ,"Carotene equivalent, beta",mcg,38.5
+02_022,"Sweet potato, pale yellow, raw",90,CHOCDF,Carbohydrate,g,25.3
+02_022,"Sweet potato, pale yellow, raw",90,CU,"Copper, Cu",mg,0.13
+02_022,"Sweet potato, pale yellow, raw",90,ENERC_KCAL,Energy,kcal,115
+02_022,"Sweet potato, pale yellow, raw",90,ENERC_KJ,Energy,kJ,486
+02_022,"Sweet potato, pale yellow, raw",90,FAT,Total lipid (fat),g,0.18
+02_022,"Sweet potato, pale yellow, raw",90,FE,"Iron, Fe",mg,1.1
+02_022,"Sweet potato, pale yellow, raw",90,FIBTG,"Fiber, total dietary",g,3
+02_022,"Sweet potato, pale yellow, raw",90,FOL,Folate,mcg,52
+02_022,"Sweet potato, pale yellow, raw",90,K,"Potassium, K",mg,457.02
+02_022,"Sweet potato, pale yellow, raw",90,MG,"Magnesium, Mg",mg,16
+02_022,"Sweet potato, pale yellow, raw",90,NA,"Sodium, Na",mg,20
+02_022,"Sweet potato, pale yellow, raw",90,NIA,Niacin,mg,0.63
+02_022,"Sweet potato, pale yellow, raw",90,P,"Phosphorus, P",mg,51.33
+02_022,"Sweet potato, pale yellow, raw",90,PROCNT,Protein,g,1.45
+02_022,"Sweet potato, pale yellow, raw",90,RETOL,Retinol,mcg,0
+02_022,"Sweet potato, pale yellow, raw",90,RIBF,Riboflavin,mg,0.04
+02_022,"Sweet potato, pale yellow, raw",90,THIA,Thiamin,mg,0.09
+02_022,"Sweet potato, pale yellow, raw",90,VITA_RAE,"Vitamin A, RAE",mcg,3.21
+02_022,"Sweet potato, pale yellow, raw",90,VITB12,Vitamin B-12,mcg,0
+02_022,"Sweet potato, pale yellow, raw",90,VITB6A,Vitamin B-6,mg,0.27
+02_022,"Sweet potato, pale yellow, raw",90,VITC,"Vitamin C, total ascorbic acid",mg,22.33
+02_022,"Sweet potato, pale yellow, raw",90,VITD,Vitamin D,mcg,0
+02_022,"Sweet potato, pale yellow, raw",90,VITE,Vitamin E,mg,0.17
+02_022,"Sweet potato, pale yellow, raw",90,WATER,Water,g,69.19
+02_022,"Sweet potato, pale yellow, raw",90,ZN,"Zinc, Zn",mg,0.39
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,ASH,Ash,g,0.9
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,CA,"Calcium, Ca",mg,33.82
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,CARTB,"Carotene, beta",mcg,
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,CARTBEQ,"Carotene equivalent, beta",mcg,1540
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,CHOCDF,Carbohydrate,g,25.47
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,CU,"Copper, Cu",mg,0.12
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,ENERC_KCAL,Energy,kcal,116
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,ENERC_KJ,Energy,kJ,490
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,FAT,Total lipid (fat),g,0.2
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,FE,"Iron, Fe",mg,1
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,FIBTG,"Fiber, total dietary",g,3
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,FOL,Folate,mcg,32.76
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,K,"Potassium, K",mg,369.04
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,MG,"Magnesium, Mg",mg,14.4
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,NA,"Sodium, Na",mg,18.67
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,NIA,Niacin,mg,0.53
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,P,"Phosphorus, P",mg,35.34
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,PROCNT,Protein,g,1.53
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,RETOL,Retinol,mcg,0
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,RIBF,Riboflavin,mg,0.03
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,THIA,Thiamin,mg,0.07
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITA_RAE,"Vitamin A, RAE",mcg,128.4
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITB12,Vitamin B-12,mcg,0
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITB6A,Vitamin B-6,mg,0.2
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITC,"Vitamin C, total ascorbic acid",mg,22.87
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITD,Vitamin D,mcg,0
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,VITE,Vitamin E,mg,0.19
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,WATER,Water,g,68.9
+02_014,"Sweet potato, yellow, boiled* (without salt)",90,ZN,"Zinc, Zn",mg,0.35
+02_013,"Sweet potato, yellow, raw",90,ASH,Ash,g,0.9
+02_013,"Sweet potato, yellow, raw",90,CA,"Calcium, Ca",mg,35.6
+02_013,"Sweet potato, yellow, raw",90,CARTB,"Carotene, beta",mcg,
+02_013,"Sweet potato, yellow, raw",90,CARTBEQ,"Carotene equivalent, beta",mcg,1620
+02_013,"Sweet potato, yellow, raw",90,CHOCDF,Carbohydrate,g,25.47
+02_013,"Sweet potato, yellow, raw",90,CU,"Copper, Cu",mg,0.13
+02_013,"Sweet potato, yellow, raw",90,ENERC_KCAL,Energy,kcal,116
+02_013,"Sweet potato, yellow, raw",90,ENERC_KJ,Energy,kJ,490
+02_013,"Sweet potato, yellow, raw",90,FAT,Total lipid (fat),g,0.2
+02_013,"Sweet potato, yellow, raw",90,FE,"Iron, Fe",mg,1.1
+02_013,"Sweet potato, yellow, raw",90,FIBTG,"Fiber, total dietary",g,3
+02_013,"Sweet potato, yellow, raw",90,FOL,Folate,mcg,52
+02_013,"Sweet potato, yellow, raw",90,K,"Potassium, K",mg,461.3
+02_013,"Sweet potato, yellow, raw",90,MG,"Magnesium, Mg",mg,16
+02_013,"Sweet potato, yellow, raw",90,NA,"Sodium, Na",mg,23.33
+02_013,"Sweet potato, yellow, raw",90,NIA,Niacin,mg,0.7
+02_013,"Sweet potato, yellow, raw",90,P,"Phosphorus, P",mg,38
+02_013,"Sweet potato, yellow, raw",90,PROCNT,Protein,g,1.53
+02_013,"Sweet potato, yellow, raw",90,RETOL,Retinol,mcg,0
+02_013,"Sweet potato, yellow, raw",90,RIBF,Riboflavin,mg,0.04
+02_013,"Sweet potato, yellow, raw",90,THIA,Thiamin,mg,0.09
+02_013,"Sweet potato, yellow, raw",90,VITA_RAE,"Vitamin A, RAE",mcg,135.15
+02_013,"Sweet potato, yellow, raw",90,VITB12,Vitamin B-12,mcg,0
+02_013,"Sweet potato, yellow, raw",90,VITB6A,Vitamin B-6,mg,0.27
+02_013,"Sweet potato, yellow, raw",90,VITC,"Vitamin C, total ascorbic acid",mg,32.7
+02_013,"Sweet potato, yellow, raw",90,VITD,Vitamin D,mcg,0
+02_013,"Sweet potato, yellow, raw",90,VITE,Vitamin E,mg,0.19
+02_013,"Sweet potato, yellow, raw",90,WATER,Water,g,68.9
+02_013,"Sweet potato, yellow, raw",90,ZN,"Zinc, Zn",mg,0.39
+170320,CAMEL,100,ENERC_KCAL,Energy,kcal,215
+170321,CAMEL,100,A_KCAL,Protein,kcal,215
+170322,CAMEL,100,PROCNT,Protein,g,19.9
+170323,CAMEL,100,A_PROTEIN,Protein,g,19.9
+170324,CAMEL,100,MFP_PROTEI,Protein,g,19.9
+170325,CAMEL,100,FAT,Total lipid (fat),g,14.4
+170326,CAMEL,100,FAMS,"Fatty acids, total monounsaturated",g,6.1
+170327,CAMEL,100,FAPU,"Fatty acids, total polyunsaturated",g,0.6
+170328,CAMEL,100,CHOLE,Cholesterol,g,60
+170329,CAMEL,100,THIA,Thiamin,mg,0.06
+170330,CAMEL,100,RIBF,Riboflavin,mg,0.12
+170331,CAMEL,100,NIA,Niacin,mg,2.6
+170332,CAMEL,100,VITB6,Vitamin B-6,mg,0.26
+170333,CAMEL,100,FOL,Folate,mg,5
+170334,CAMEL,100,VITB12,Vitamin B-12,mcg,1.5
+170335,CAMEL,100,PANTAC,Pantothenic acid,g,0.32
+170336,CAMEL,100,CA,"Calcium, Ca",mg,3
+170337,CAMEL,100,P,"Phosphorus, P",mg,155
+170338,CAMEL,100,MG,"Magnesium, Mg",mg,18
+170339,CAMEL,100,K,"Potassium, K",mg,272
+170340,CAMEL,100,NA,"Sodium, Na",g,42
+170341,CAMEL,100,FE,"Iron, Fe",mg,1.4
+170342,CAMEL,100,MFP_FE,"Iron, Fe",mg,1.4
+170343,CAMEL,100,ZN,"Zinc, Zn",mg,3.3
+170344,CAMEL,100,CU,"Copper, Cu",mg,0.07
+170345,CAMEL,100,MN,"Manganese, Mn",mg,0.01
+170346,CAMEL,100,TRP,Tryptophan,mg,224
+170347,CAMEL,100,THR,Threonine,mg,871
+170348,CAMEL,100,ILE,Isoleucine,mg,897
+170349,CAMEL,100,LEU,Leucine,mg,1576
+170350,CAMEL,100,LYS,Lysine,mg,1659
+170351,CAMEL,100,MET,Methionine,mg,510
+170352,CAMEL,100,CYS,Cystine,mg,224
+170353,CAMEL,100,PHE,Phenylalanine,mg,779
+170354,CAMEL,100,TYR,Tyrosine,mg,670
+170355,CAMEL,100,VAL,Valine,mg,970
+170356,CAMEL,100,ARG,Arginine,mg,1261
+170357,CAMEL,100,HIS,Histidine,mg,683
+04_028,"Cassava, leaves, boiled* (without salt)",100,ASH,Ash,g,1.93
+04_028,"Cassava, leaves, boiled* (without salt)",100,CA,"Calcium, Ca",mg,276.14
+04_028,"Cassava, leaves, boiled* (without salt)",100,CARTB,"Carotene, beta",mcg,3250
+04_028,"Cassava, leaves, boiled* (without salt)",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+04_028,"Cassava, leaves, boiled* (without salt)",100,CHOCDF,Carbohydrate,g,13.6
+04_028,"Cassava, leaves, boiled* (without salt)",100,CU,"Copper, Cu",mg,0.16
+04_028,"Cassava, leaves, boiled* (without salt)",100,ENERC_KCAL,Energy,kcal,102
+04_028,"Cassava, leaves, boiled* (without salt)",100,ENERC_KJ,Energy,kJ,432
+04_028,"Cassava, leaves, boiled* (without salt)",100,FAT,Total lipid (fat),g,0.86
+04_028,"Cassava, leaves, boiled* (without salt)",100,FATCE,Fat,g,
+04_028,"Cassava, leaves, boiled* (without salt)",100,FE,"Iron, Fe",mg,4.4
+04_028,"Cassava, leaves, boiled* (without salt)",100,FIBC,"Fiber, total dietary",g,3.8
+04_028,"Cassava, leaves, boiled* (without salt)",100,FIBTG,Fiber,g,
+04_028,"Cassava, leaves, boiled* (without salt)",100,FOL,Folate,mcg,62
+04_028,"Cassava, leaves, boiled* (without salt)",100,K,"Potassium, K",mg,318.42
+04_028,"Cassava, leaves, boiled* (without salt)",100,MG,"Magnesium, Mg",mg,36
+04_028,"Cassava, leaves, boiled* (without salt)",100,NA.,"Sodium, Na",mg,4.74
+04_028,"Cassava, leaves, boiled* (without salt)",100,NIA,Niacin,mg,1.12
+04_028,"Cassava, leaves, boiled* (without salt)",100,P,"Phosphorus, P",mg,100.23
+04_028,"Cassava, leaves, boiled* (without salt)",100,PROTCNT,Protein,g,7.94
+04_028,"Cassava, leaves, boiled* (without salt)",100,RETOL,Retinol,mcg,0
+04_028,"Cassava, leaves, boiled* (without salt)",100,RIBF,Riboflavin,mg,0.31
+04_028,"Cassava, leaves, boiled* (without salt)",100,THIA,Thiamin,mg,0.17
+04_028,"Cassava, leaves, boiled* (without salt)",100,TOCPHA,Vitamin,mg,
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITA_RAE,"Vitamin A, RAE",mcg,270.56
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITB12,Vitamin B-12,mcg,0
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITB6C,Vitamin B-6,mg,0.21
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITC,"Vitamin C, total ascorbic acid",mg,16.4
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITD,Vitamin D,mcg,0
+04_028,"Cassava, leaves, boiled* (without salt)",100,VITE,Vitamin E,mg,2.53
+04_028,"Cassava, leaves, boiled* (without salt)",100,WATER,Water,g,71.7
+04_028,"Cassava, leaves, boiled* (without salt)",100,ZN,"Zinc, Zn",mg,0.54
+10_018,"Milk, camel, raw (average of different breeds)",100,ASH,Ash,g,0.8
+10_018,"Milk, camel, raw (average of different breeds)",100,CA,"Calcium, Ca",mg,116
+10_018,"Milk, camel, raw (average of different breeds)",100,CARTB,"Carotene, beta",mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,CARTBEQ,"Carotene equivalent, beta",mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,CHOCDF,Carbohydrate,g,4.7
+10_018,"Milk, camel, raw (average of different breeds)",100,CU,"Copper, Cu",mg,0.15
+10_018,"Milk, camel, raw (average of different breeds)",100,ENERC_KCAL,Energy,kcal,58
+10_018,"Milk, camel, raw (average of different breeds)",100,ENERC_KJ,Energy,kJ,241
+10_018,"Milk, camel, raw (average of different breeds)",100,FAT,Total lipid (fat),g,3
+10_018,"Milk, camel, raw (average of different breeds)",100,FATCE,Fat,g,
+10_018,"Milk, camel, raw (average of different breeds)",100,FE,"Iron, Fe",mg,0.2
+10_018,"Milk, camel, raw (average of different breeds)",100,FIBC,"Fiber, total dietary",g,
+10_018,"Milk, camel, raw (average of different breeds)",100,FIBTG,Fiber,g,0
+10_018,"Milk, camel, raw (average of different breeds)",100,FOL,Folate,mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,K,"Potassium, K",mg,151
+10_018,"Milk, camel, raw (average of different breeds)",100,MG,"Magnesium, Mg",mg,13
+10_018,"Milk, camel, raw (average of different breeds)",100,NA.,"Sodium, Na",mg,61
+10_018,"Milk, camel, raw (average of different breeds)",100,NIA,Niacin,mg,
+10_018,"Milk, camel, raw (average of different breeds)",100,P,"Phosphorus, P",mg,86
+10_018,"Milk, camel, raw (average of different breeds)",100,PROTCNT,Protein,g,3.1
+10_018,"Milk, camel, raw (average of different breeds)",100,RETOL,Retinol,mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,RIBF,Riboflavin,mg,0.06
+10_018,"Milk, camel, raw (average of different breeds)",100,THIA,Thiamin,mg,
+10_018,"Milk, camel, raw (average of different breeds)",100,TOCPHA,Vitamin,mg,
+10_018,"Milk, camel, raw (average of different breeds)",100,VITA_RAE,"Vitamin A, RAE",mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,VITB12,Vitamin B-12,mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,VITB6C,Vitamin B-6,mg,
+10_018,"Milk, camel, raw (average of different breeds)",100,VITC,"Vitamin C, total ascorbic acid",mg,1.9
+10_018,"Milk, camel, raw (average of different breeds)",100,VITD,Vitamin D,mcg,
+10_018,"Milk, camel, raw (average of different breeds)",100,VITE,Vitamin E,mg,
+10_018,"Milk, camel, raw (average of different breeds)",100,WATER,Water,g,88.52
+10_018,"Milk, camel, raw (average of different breeds)",100,ZN,"Zinc, Zn",mg,0.56
