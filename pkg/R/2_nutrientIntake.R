@@ -50,6 +50,7 @@ nutrientIntake  <-  function(consumption, content, weight=NULL, verbose=TRUE){
 	# I think like this it mg/g * g/1000 = g
 
 	cont$intake <- cont$value * cont$mass / 1000
+	cont <- cont[!is.na(cont$intake), ]
 	cont <- cont[cont$intake > 0, ]
 	#cont  <- cont[,c("tag", "MNutr_PersonDay", "Code_FdGp1", "Item_FdGp1", "MNutr_Val", "Mass")]
 	return(cont)

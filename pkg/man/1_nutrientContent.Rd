@@ -25,7 +25,7 @@ This function returns a \code{data.frame} with (micro-)nutrient content by food 
 }
 
 \usage{
-nutrientContent(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=FALSE)
+nutrientContent(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=TRUE)
 }
 
 \arguments{

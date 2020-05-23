@@ -5,7 +5,7 @@
 #	readRDS(file.path(.dataPath(), "GpCntries.rds"))
 #}
 
-nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=FALSE) {
+nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=TRUE) {
 
 	.dataPath <- function() {system.file("ex", package="diets")}
 
@@ -43,31 +43,62 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 		FCT$PCT2_3[i]  <- 92 * (1-orangesweetpot)
 	}
 
-	i <- is.na(FCT$PCT1_2)
-	OneMerge  <- FCT[i, ]
-	
-	#FCT$PCT1_2[i]  <- "nop"
-	#OneMerge  <- FCT[FCT$PCT1_2 == "nop",]
 
   ## FISH have no PCT1_2 so they are directly multiply by PCT2_3 (Select, Multiply and aggregate by PCT2_3)
   ## PCT2_3
-	OneMerge$MNutr_Val  <- (OneMerge$MNutr_Val * OneMerge$PCT2_3) / 100
-	ShrtFCT  <- aggregate(OneMerge[, "MNutr_Val", drop = FALSE], OneMerge[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	i <- is.na(FCT$PCT1_2)
+	fish  <- FCT[i, ]
 
-	#TwoMerge  <- FCT[FCT$PCT1_2 != "nop",]
-	TwoMerge  <- FCT[!i, ]
-	if(nrow(TwoMerge) > 0){
-    ## The rest of the food must be divide by PCT2_3 and PCT1_2 (Select, Multiply and aggregate by PCT2_3 and PCT1_2)
+    # % do not add up to 100	
+#	fu <- fish[fish$Tagname=="FE", c("Item_FdGp1", "PCT2_3", "MNutr_Val")]
+#	fa <- aggregate(fu[, "PCT2_3", drop=FALSE], list(fu$Item_FdGp1), sum)	
+#	fa
+
+    # then this is wrong	
+#	fish$MNutr_Val  <- fish$MNutr_Val * fish$PCT2_3 / 100
+#	ShrtFCT  <- aggregate(fish[, "MNutr_Val", drop = FALSE], fish[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+
+    # and this is better
+	fish$MNutr_Val  <- fish$MNutr_Val * fish$PCT2_3
+	fish <- aggregate(fish[, c("MNutr_Val", "PCT2_3")], fish[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	fish$MNutr_Val <- fish$MNutr_Val / fish$PCT2_3
+	fish$PCT2_3 <- NULL
+
+## The rest of the food must be divided with PCT2_3 and PCT1_2 (select, multiply and aggregate by PCT2_3 and PCT1_2)
+	notf  <- FCT[!i, ]
     ## PCT2_3
-		TwoMerge$MNutr_Val  <- (TwoMerge$MNutr_Val * TwoMerge$PCT2_3) /100
-		TwoMerge  <- aggregate(TwoMerge[, c("MNutr_Val"), drop = FALSE], TwoMerge[,c("Code_FdGp1", "Item_FdGp1", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
-		## PCT1_2
-		TwoMerge$MNutr_Val  <- (TwoMerge$MNutr_Val * as.double(TwoMerge$PCT1_2)) / 100
-		TwoMerge  <- aggregate(TwoMerge[, c("MNutr_Val"), drop = FALSE], TwoMerge[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	
+    # again % do not all add up to 100	
+	#nu <- notf[notf$Tagname=="FE", c("Item_FdGp1", "PCT2_3", "Item_FdGp2", "PCT1_2", "MNutr_Val")]
+	#na <- aggregate(nu[, "PCT2_3", drop=FALSE], nu[,c("Item_FdGp1", "Item_FdGp2"), drop=FALSE], sum)	
+	#na <- na[order(na$Item_FdGp1), ]
 
-		## Bind the two group together
-		ShrtFCT  <- rbind(ShrtFCT,TwoMerge)
-	}
+# then this is wrong	
+	#notf$MNutr_Val  <- (notf$MNutr_Val * notf$PCT2_3) /100
+	#notf  <- aggregate(notf[, "MNutr_Val", drop = FALSE], notf[,c("Code_FdGp1", "Item_FdGp1", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+
+# and this is better
+	notf$MNutr_Val  <- notf$MNutr_Val * notf$PCT2_3
+	notf  <- aggregate(notf[, c("MNutr_Val", "PCT2_3")], notf[,c("Code_FdGp1", "Item_FdGp1", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	notf$MNutr_Val <- notf$MNutr_Val / notf$PCT2_3
+
+	## PCT1_2
+    # again % do not all add up to 100	
+	#nu2 <- notf[notf$Tagname=="FE", c("Item_FdGp1", "PCT2_3", "Item_FdGp2", "PCT1_2", "MNutr_Val")]
+	#na2 <- aggregate(nu2[, "PCT1_2", drop=FALSE], nu2[, "Item_FdGp1", drop=FALSE], sum)	
+	#na2 <- na2[order(na2$Item_FdGp1), ]
+	
+	#notf$MNutr_Val  <- (notf$MNutr_Val * as.double(notf$PCT1_2)) / 100
+	#notf  <- aggregate(notf[, c("MNutr_Val"), drop = FALSE], notf[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+
+	# better
+	notf  <- aggregate(notf[, c("MNutr_Val", "PCT1_2"), drop = FALSE], notf[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutrDesc", "Units_MNutr")], sum, na.rm = TRUE)
+	notf$MNutr_Val <- notf$MNutr_Val / notf$PCT1_2
+	notf$PCT1_2 <- NULL
+
+
+	## combine fish and not fish
+	fct  <- rbind(fish, notf)
 
 	### Add phytate as a micronutrient.
 	PHY  <- FCT[, c("Code_FdGp1", "Item_FdGp1", "PHYTAC")]
@@ -77,16 +108,16 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	PHY  <- unique(data.frame(PHY, Tagname = "PHYTAC", Units_MNutr = "PerThousand", MNutrDesc = "Phytate"))
 
 	## Bind with Phytate
-	ShrtFCT  <- rbind(ShrtFCT, PHY)
-	ShrtFCT  <- ShrtFCT[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutr_Val", "Units_MNutr", "MNutrDesc")]
-	colnames(ShrtFCT) <- c("code", "group", "tag", "value", "unit", "desc")
+	fct  <- rbind(fct, PHY)
+	fct  <- fct[,c("Code_FdGp1", "Item_FdGp1", "Tagname", "MNutr_Val", "Units_MNutr", "MNutrDesc")]
 
 # RH
-	ShrtFCT$unit[ShrtFCT$unit == "GramsPerMille"] <- "permille"
-	ShrtFCT$unit[ShrtFCT$unit == "PerThousand"] <- "permille"
-	ShrtFCT <- ShrtFCT[ShrtFCT$tag != "ENERC_KJ", ]
+	colnames(fct) <- c("code", "group", "tag", "value", "unit", "desc")
+	fct$unit[fct$unit == "GramsPerMille"] <- "permille"
+	fct$unit[fct$unit == "PerThousand"] <- "permille"
+	fct <- fct[fct$tag != "ENERC_KJ", ] # we use kcal
   
-	return(ShrtFCT)
+	return(fct)
 }
 
 
