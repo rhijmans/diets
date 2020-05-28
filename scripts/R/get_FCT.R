@@ -219,7 +219,9 @@
 ## Add the 2 FCT in one and merge with the links table (link betwen FBS/FCTSup-ProductionImportExport-USDA)
 getFCT  <-  function() {
 
-	for (fbs in c(TRUE, FALSE)) {
+	#for (fbs in c(TRUE, FALSE)) {
+	# do not aggregate to FBS yet
+	fbs = FALSE
 
 		# this table provides the link between USDA food groups (that have the micronutrients)
 		# and FAO FBS (from where we get the quantities)
@@ -254,11 +256,12 @@ getFCT  <-  function() {
 
 		## Clean the table
 		FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
-
 		# removing three non food items
 		FCT <- FCT[!is.na(FCT$PCT2_3 ), ]
 				
 		i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
+		#bad <- FCT[i, ]
+
 		FCT <- FCT[!i, ]
 		
 		# NA tag (sodium) was read as <NA> (missing data)
@@ -266,6 +269,6 @@ getFCT  <-  function() {
 
 		f <- ifelse(fbs, "pkg/FCT_FBS.rds", "pkg/FCT.rds")
 		saveRDS(FCT, f)
-	}	
+	#}	
 }
 

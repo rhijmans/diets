@@ -25,14 +25,13 @@ This function returns a \code{data.frame} with (micro-)nutrient content by food 
 }
 
 \usage{
-nutrientContent(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=TRUE)
+nutrientContent(continent="", redpalmoil=0.5, orangesweetpot=0)
 }
 
 \arguments{
   \item{continent}{character. One of "Africa", "Americas", "Asia", "Europe", "Oceania", or "". If not "", continental level adjustments are made to the fruits and vegetables composition of food groups}
   \item{redpalmoil}{numeric. Value between 0 and 1 to indicate the ratio of red palm oil}
   \item{orangesweetpot}{numeric. Value between 0 and 1 to indicate the ratio of orange sweet potatoes}
-  \item{fbs}{logical. if \code{TRUE}, FAO Food Balance Sheet food groups are returned}
 }
 
 \value{

@@ -9,7 +9,7 @@ deficiencies <- function(intake, requirements, CV) {
 	m  <- merge(Intk, Reqs, by = "tag")
 
   ### PART 2 : Deficiencies calculation.
-  ## Merge with coeficient of variation.
+  ## Merge with coefficient of variation.
 	m  <- merge(m, CV[, c("tag", "CV")], all.x = TRUE)
 	m$CV[is.na(m$CV)] <- 0.3
   ## Use a normal repartition if CV under or equal 0.3

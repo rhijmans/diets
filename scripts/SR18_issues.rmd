@@ -1,0 +1,118 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# SR18 mismatches
+
+```{r}
+source("R/get_FCT.R")
+d <- read.csv("data/FCTTitles.csv")
+d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
+names(d)  <- c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3")
+FCTP <- .getUSDA()
+FCTS <- .FCT_Sup_data()
+FCTP  <- FCTP[,c("NDB_No", "Long_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
+names(FCTP) <- c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
+FCTS  <- FCTS[,c("WA_NDB_No", "WA_Shrt_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
+names(FCTS) <-c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
+FCT_data  <- rbind(FCTP, FCTS)
+FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Code_FdGp3", "Item_FdGp3"))
+FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
+FCT <- FCT[!is.na(FCT$PCT2_3 ), ]	
+i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
+bad <- FCT[i, ]
+u = unique(bad[,c(8:9)])
+nomatch <- sort(u[,2])
+```
+
+Food group items that no long match SR
+```{r}
+nomatch
+```
+
+
+```{r}
+# food group items in SR18
+ufg <- unique(FCTP$Item_FdGp3)
+
+print(nomatch[1])
+print(grep("Babyfood, cereal", ufg, value=TRUE))
+cat("\n-----\n")
+
+print(nomatch[2:5])
+print(grep("Beef, New Zealand", ufg, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[c(6,18,27:28)])
+print(grep("\\btea\\b", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[7])
+print(grep("cocoa", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+  
+print(nomatch[8:9])
+print(grep("Beverages, coffee", ufg, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[10:11])
+print(grep("Crustaceans, shrimp", ufg, value=TRUE))
+cat("\n-----\n")
+
+print(nomatch[12:13])
+print(grep("Fish, cod", ufg, value=TRUE))
+cat("\n-----\n")
+
+# no longer included
+print(nomatch[14])
+print(grep("dolphin", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+# no longer included?
+print(nomatch[15:16])
+print(grep("Fish, pollock", ufg, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[17])
+print(grep("Fish, salmon", ufg, value=TRUE))
+cat("\n-----\n")
+
+print(nomatch[19])
+print(grep("Kiwifruit", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+print(nomatch[20])
+print(grep("Macaroni", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[21])
+print(grep("Pork Sausage", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+
+# Does this exist? corn-pasta?
+print(nomatch[22])
+print(grep("Pasta", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[23])
+print(grep("Peaches", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+
+print(nomatch[24:25])
+print(grep("Rice, white", ufg, ignore.case=TRUE, value=TRUE))
+cat("\n-----\n")
+
+print(nomatch[26])
+print(grep("Spices, mustard", ufg, ignore.case=TRUE, value=TRUE))
+
+```

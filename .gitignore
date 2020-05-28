@@ -7,8 +7,8 @@ scripts/pkg/*
 scripts/*.rds
 old/
 
-diets.pdf
-diets.html
+*.pdf
+*.html
 
 *.zip
 *.tar.gz

@@ -2,6 +2,8 @@
 ## Give population micronutrient requirements by Age group for a population in a year
 nutrient_requirements  <- function(pop, reqs){
 
+
+# figure out if this is relevant: 
 # This replacement is relevant but should be the 
 # responsibility of the caller (to use ZN Physio in stead of ZN)
 # and could be done with the output of this function

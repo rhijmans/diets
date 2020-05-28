@@ -48,9 +48,9 @@ intake <- adjust_Zn(intake)
 iron <- readRDS(system.file("ex/NHemeIron.rds", package="diets"))
 intake <- adjust_Fe(intake, iron)
 
-reqrda <- readRDS(system.file("ex/reqs_rda.rds", package = "diets"))
+reqear <- readRDS(system.file("ex/reqs_ear.rds", package = "diets"))
 pop <- readRDS(system.file("ex/rwa_pop.rds", package = "diets"))
-popreq <- nutrient_requirements(pop, reqrda)
+popreq <- nutrient_requirements(pop, reqear)
 
 CV <- readRDS(system.file("ex/CV.rds", package = "diets"))
 

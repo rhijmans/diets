@@ -30,6 +30,8 @@ adjust_Ca <- function(intake) {
 	} else if (AP <= 60) {
 		intake$intake[i] <- intake$intake[i] * 1.108
 	}
+	# the above could easily be made continuous with approx
+	
 	intake
 }
 
@@ -107,9 +109,18 @@ adjust_Fe <- function(intake, heme) {
 		intake$intake[i] <- intake$intake[i] / 1.506
 	} else if (Bioavail < 13.75) {
 		intake$intake[i] <- intake$intake[i] / 1.248
-	} else {
+	} #else {
 		#intake$intake[i]  <- intake$intake[i]
-	}	
+	#}	
+	
+	# this last part would be more elegant if we did something like 
+	#x <- c(0, 6.25, 8.75, 11.25, 13.75)
+	#y <- c(3.055, 2.249, 1.506, 1.248, 1) 
+	# adj <- approx(x, y, xout=Bioavail, rule=2)$y
+    # intake$intake[i] <- intake$intake[i] / adj
+    # but I do not know where to put the x values (in the middle?)
+    # need to see what this was derived from	
+	
 	intake
 }
 

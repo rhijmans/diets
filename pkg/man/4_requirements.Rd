@@ -32,7 +32,6 @@ data.frame
 
 \examples{
 # standard daily requirements in g 
-req <- readRDS(system.file("ex/reqs.rds", package = "diets"))
 reqrda <- readRDS(system.file("ex/reqs_rda.rds", package = "diets"))
 
 pop <- readRDS(system.file("ex/rwa_pop.rds", package = "diets"))

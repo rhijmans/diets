@@ -6,7 +6,7 @@ getReq <- function() {
 
 		if(rda){
 			DRI <- base::readRDS("data/RecommendedDietaryAllowances.rds")
-		} else {
+		} else { # ear
 			DRI <- base::readRDS("data/EstimatedAverageRequirements.rds")
 			## Change units for protein from g/kg to g
 			i <- DRI$Tagname == "PROCNT"
@@ -49,7 +49,7 @@ getReq <- function() {
 		if(rda){
 			saveRDS(DRI, "pkg/reqs_rda.rds")
 		} else {
-			saveRDS(DRI, "pkg/reqs.rds")	
+			saveRDS(DRI, "pkg/reqs_ear.rds")	
 		}
 	}
 }

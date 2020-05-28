@@ -5,7 +5,10 @@
 #	readRDS(file.path(.dataPath(), "GpCntries.rds"))
 #}
 
-nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=TRUE) {
+# consider make "continent" a data.frame that the user provides
+# so that it could be more granular (e.g. country)
+
+nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0) {
 
 	.dataPath <- function() {system.file("ex", package="diets")}
 
@@ -14,10 +17,11 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 	stopifnot(redpalmoil <= 1)
 	stopifnot(orangesweetpot <= 1)
 
+	fbs = FALSE
 	FCT  <- readRDS(file.path(.dataPath(), ifelse(fbs, "FCT.rds", "FCT_FBS.rds")))
 
 	if (continent != "") {
-		## Open a file with continental differencis in fruit and vegetable consumption
+		## Open a file with continental differences in fruit and vegetable consumption
 		FCTcnt <- readRDS(file.path(.dataPath(), "ContiConsump.rds"))
 		names(FCTcnt)[1:4]  <- c("Code_FdGp2", "Item_FdGp2", "Code_FdGp1", "Item_FdGp1")
 		
@@ -121,6 +125,8 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0, fbs=
 }
 
 
+## The forst table should have a "coverage" variable so that 
+## we do not assume 100%
 
 fortify <-  function(content, fort) {
 	f <- fort[,c("code", "tag", "unit", "value")]
