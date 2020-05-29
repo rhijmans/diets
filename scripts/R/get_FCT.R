@@ -216,22 +216,33 @@
 #faoi <- read.csv("data/FAOSTAT_FBS_items.csv")
 #faog <- read.csv("data/FAOSTAT_FBS_itemgroups.csv")
 
+
+sb2728_change <- function() {
+m <- cbind(
+old=c('Babyfood, cereal, mixed, dry', 'Beef, New Zealand, imported, kidney, cooked, boiled', 'Beef, New Zealand, imported, liver, cooked, boiled', 'Beef, New Zealand, imported, tongue, cooked, boiled', 'Beef, New Zealand, imported, tripe uncooked, cooked, boiled', 'Beverages, Green tea, brewed, from bags', 'Cocoa mix, powder', 'Coffee, brewed from grounds, prepared with tap water', 'Coffee, instant, regular, powder', 'Crustaceans, shrimp, mixed species, cooked, moist heat', 'Crustaceans, shrimp, untreated, cooked', 'Fish, cod, Pacific, cooked, dry heat', 'Fish, cod, Pacific, untreated, cooked', 'Fish, dolphinfish, cooked, dry heat', 'Fish, pollock, Alaska, cooked, dry heat', 'Fish, pollock, Alaska, untreated, cooked', 'Fish, salmon, sockeye, untreated, cooked', 'Hibiscus tea', 'Kiwifruit, gold, raw', 'Macaroni, cooked, unenriched', 'OSCAR MAYER, Pork Sausage Links (cooked)', 'Pasta, corn, cooked', 'Peaches, raw', 'Rice, white, glutinous, cooked', 'Rice, white, long-grain, regular, cooked, unenriched, without salt', 'SPICES,MUSTARD SD,GROUND', 'Tea, black, brewed, prepared with tap water', 'Tea, herb, other than chamomile, brewed'),  
+new=c('Babyfood, cereal, mixed, dry fortified', 'Beef, New Zealand, imported, variety meats and by-products, kidney, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products liver, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tongue, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tripe uncooked, raw', 'Beverages, tea, green, brewed, regular', 'Cocoa mix, NESTLE, Rich Chocolate Hot Cocoa Mix', 'Beverages, coffee, brewed, prepared with tap water', 'Beverages, coffee, instant, regular, powder', 'Crustaceans, shrimp, mixed species, cooked, moist heat (may have been previously frozen)', 'Crustaceans, shrimp, cooked (not previously frozen)', 'Fish, cod, Pacific, cooked, dry heat (may have been previously frozen)', 'Fish, cod, Pacific, cooked (not previously frozen)', '', 'Fish, pollock, Alaska, cooked, dry heat (may have been previously frozen)', 'Fish, pollock, Alaska, cooked (not previously frozen)', 'Fish, salmon, sockeye, cooked, dry heat', 'Beverages, tea, hibiscus, brewed', 'Kiwifruit, ZESPRI SunGold, raw', 'Pasta, cooked, unenriched, with added salt', 'Pork sausage, link/patty, cooked, pan-fried', '', 'Peaches, yellow, raw', 'Rice, white, glutinous, unenriched, cooked', 'Spices, mustard seed, ground', 'Spices, mustard seed, ground', 'Beverages, tea, black, brewed, prepared with tap water', 'Beverages, tea, herb, other than chamomile, brewed'))
+m[m[,2] != "", ]
+}
+
+
+
 ## Add the 2 FCT in one and merge with the links table (link betwen FBS/FCTSup-ProductionImportExport-USDA)
 getFCT  <-  function() {
 
-	#for (fbs in c(TRUE, FALSE)) {
-	# do not aggregate to FBS yet
-	fbs = FALSE
 
 		# this table provides the link between USDA food groups (that have the micronutrients)
 		# and FAO FBS (from where we get the quantities)
 		d <- read.csv("data/FCTTitles.csv")
-		if (fbs) {
-			d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
-		} else {
-			d  <- d[,c("Code_Local", "Item_Local", "PHYTAC", "PCT2_Local", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
-		}
+		d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
+		#} else {
+		#	d  <- d[,c("Code_Local", "Item_Local", "PHYTAC", "PCT2_Local", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
+		#}
 		names(d)  <- c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3")
+
+		f28 <- sb2728_change()
+		i <- match(d$Item_FdGp3, f28[,1])
+		i = na.omit(cbind(d=1:length(i), f28=i))
+		d$Item_FdGp3[i[,1]] <- f28[i[,2],2]
 
 		# 470 NDB_No codes
 		# 270 FAO_PIE codes
@@ -252,7 +263,8 @@ getFCT  <-  function() {
 
 
 		## Merge with the FCT with the links table
-		FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Code_FdGp3", "Item_FdGp3"))
+		d$Code_FdGp3 = NULL # 
+		FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Item_FdGp3"))
 
 		## Clean the table
 		FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
@@ -267,7 +279,7 @@ getFCT  <-  function() {
 		# NA tag (sodium) was read as <NA> (missing data)
 		FCT[FCT$MNutrDesc=="Sodium, Na", "Tagname"] <- "NA"  
 
-		f <- ifelse(fbs, "pkg/FCT_FBS.rds", "pkg/FCT.rds")
+		f <- "pkg/FCT.rds"
 		saveRDS(FCT, f)
 	#}	
 }

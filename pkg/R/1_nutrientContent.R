@@ -17,8 +17,7 @@ nutrientContent <- function(continent="", redpalmoil=0.5, orangesweetpot=0) {
 	stopifnot(redpalmoil <= 1)
 	stopifnot(orangesweetpot <= 1)
 
-	fbs = FALSE
-	FCT  <- readRDS(file.path(.dataPath(), ifelse(fbs, "FCT.rds", "FCT_FBS.rds")))
+	FCT  <- readRDS(file.path(.dataPath(), "FCT.rds"))
 
 	if (continent != "") {
 		## Open a file with continental differences in fruit and vegetable consumption
