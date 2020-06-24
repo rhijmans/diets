@@ -53,14 +53,21 @@ get_FBS <- function() {
 	#    fbsFinal <- data.frame(ISO3 = fbsFinal$ISO3, Country=fbsFinal$Country, Year=fbsFinal$Year, fbsFinal[, c("ItemCode", "Item", "ElementCode", "Element", "Unit", "Value")])
 
 		fbs2 <- fbs2[, c("ISO3", "Area", "Year", "Item", "Element", "Unit", "Value")]
-		saveRDS(fbs2, "FBS.rds")
+		
 
 	# example for the package	
 		if (method=="new") {
 			rwafbs = fbs2[fbs2$Area == "Rwanda" & fbs2$Year == 2017 & fbs2$Element == "Food supply (kcal/capita/day)", ]
 			rwafbs$ISO3 = NULL
 			saveRDS(rwafbs, "pkg/rwa_FBS.rds")
+		} else {
+			fbsold = fbs2
 		}
 	}
+	
+	x <- rbind(fbsold, fbs2)
+	# sorting takes a while ;(
+	x <- x[order(x$Area, x$Year, x$Item, x$Element), ]
+	saveRDS(x, "FBS.rds")
 }
 

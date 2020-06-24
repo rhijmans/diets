@@ -1,5 +1,11 @@
 
-setwd("C:/github/diets/scripts")
+this <- system('hostname', TRUE)
+if (this == "LAPTOP-IVSPBGCA") {
+	setwd("C:/github/diets/scripts")
+} else {
+	setwd("C:/Users/jccaro/diets/")
+}
+
 
 dir.create("pkg", FALSE)
 dir.create("process", FALSE)
