@@ -8,7 +8,7 @@ Compute nutrient intake from consumption and nutrient content data
 
 \description{
 This function computes micronutrient intake from food quantity (consumption) and food micronutrient composition (content).
-The tables are merged by the food group. By default, content and consumption are merged usung by the energy consuption and content of the food groups. It can also be done by weight, in which case a data.frame with parameters for the food groups needs to be supplied.
+The tables are merged by the food group. By default, content and consumption are merged usung by the energy consumption and content of the food groups. It can also be done by weight, in which case a data.frame with parameters for the food groups needs to be supplied.
 }
 
 

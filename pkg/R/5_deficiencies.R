@@ -1,10 +1,27 @@
 ## Calculate deficiencies for a person.
-deficiencies <- function(intake, requirements, CV) {
+
+.get_norm <- function(intake, req, CV) {
+	100 * (1 - pnorm(intake, req, CV * intake))
+}
+
+.get_old_norm <- function(intake, req, cv) {
+	100 * (1 - pnorm(intake, req, cv * req))
+}
+
+
+.get_log_norm <- function(intake, req, cv){
+	lmn <- log(req^2 / sqrt((req * cv)^2 + req^2))
+	xls <- sqrt(log((req * cv)^2 / req^2 + 1))
+	100 * (1 - plnorm(intake, lmn, xls))
+}
+
+
+deficiencies <- function(intake, requirements, CV, old=FALSE) {
 
 	# Average requirement value & average intake value (should not be needed)
 
-	Reqs <- aggregate(requirements[, "req", drop=FALSE], requirements[, "tag", drop=FALSE], sum)
-	Intk <- aggregate(intake[, "intake", drop=FALSE], intake[, "tag", drop=FALSE], sum)
+	Reqs <- aggregate(requirements[, "req", drop=FALSE], requirements[, "tag", drop=FALSE], sum, na.rm=TRUE)
+	Intk <- aggregate(intake[, "intake", drop=FALSE], intake[, "tag", drop=FALSE], sum, na.rm=TRUE)
 	
 	m  <- merge(Intk, Reqs, by = "tag")
 
@@ -12,18 +29,18 @@ deficiencies <- function(intake, requirements, CV) {
   ## Merge with coefficient of variation.
 	m  <- merge(m, CV[, c("tag", "CV")], all.x = TRUE)
 	m$CV[is.na(m$CV)] <- 0.3
-  ## Use a normal repartition if CV under or equal 0.3
-	m$deficiency <- 100 * (1 - pnorm(m$intake, m$req, m$CV * m$intake))
+  ## Use a normal distribution if CV under or equal 0.3
+	#m$deficiency <- 100 * (1 - pnorm(m$intake, m$req, m$CV * m$intake))
 
-  ## Use a log-normal repartition if CV upper 0.3
-	log_norm  <- function(mn, cv, p){
-		lmn <- log(mn^2 / sqrt((mn * cv)^2 + mn^2))
-		xls <- sqrt(log((mn * cv)^2 / mn^2 + 1))
-		100 * (1 - plnorm(p, lmn, xls))
+	if (old) {
+		m$deficiency <- .get_old_norm(m$intake, m$req, m$CV)
+	} else {
+		m$deficiency <- .get_norm(m$intake, m$req, m$CV)
 	}
+  ## Use a log-normal distribution if CV upper 0.3
 
 	i <- m$CV > 0.3 & !is.na(m$CV)
-	m$deficiency[i]  <- log_norm(m$req[i], m$CV[i], m$intake[i])
+	m$deficiency[i]  <- .get_log_norm(m$intake[i], m$req[i], m$CV[i])
 	m
 	
   ### PART 3 : Formatting data

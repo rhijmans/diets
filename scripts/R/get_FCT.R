@@ -220,10 +220,11 @@
 sb2728_change <- function() {
 m <- cbind(
 old=c('Babyfood, cereal, mixed, dry', 'Beef, New Zealand, imported, kidney, cooked, boiled', 'Beef, New Zealand, imported, liver, cooked, boiled', 'Beef, New Zealand, imported, tongue, cooked, boiled', 'Beef, New Zealand, imported, tripe uncooked, cooked, boiled', 'Beverages, Green tea, brewed, from bags', 'Cocoa mix, powder', 'Coffee, brewed from grounds, prepared with tap water', 'Coffee, instant, regular, powder', 'Crustaceans, shrimp, mixed species, cooked, moist heat', 'Crustaceans, shrimp, untreated, cooked', 'Fish, cod, Pacific, cooked, dry heat', 'Fish, cod, Pacific, untreated, cooked', 'Fish, dolphinfish, cooked, dry heat', 'Fish, pollock, Alaska, cooked, dry heat', 'Fish, pollock, Alaska, untreated, cooked', 'Fish, salmon, sockeye, untreated, cooked', 'Hibiscus tea', 'Kiwifruit, gold, raw', 'Macaroni, cooked, unenriched', 'OSCAR MAYER, Pork Sausage Links (cooked)', 'Pasta, corn, cooked', 'Peaches, raw', 'Rice, white, glutinous, cooked', 'Rice, white, long-grain, regular, cooked, unenriched, without salt', 'SPICES,MUSTARD SD,GROUND', 'Tea, black, brewed, prepared with tap water', 'Tea, herb, other than chamomile, brewed'),  
-new=c('Babyfood, cereal, mixed, dry fortified', 'Beef, New Zealand, imported, variety meats and by-products, kidney, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products liver, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tongue, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tripe uncooked, raw', 'Beverages, tea, green, brewed, regular', 'Cocoa mix, NESTLE, Rich Chocolate Hot Cocoa Mix', 'Beverages, coffee, brewed, prepared with tap water', 'Beverages, coffee, instant, regular, powder', 'Crustaceans, shrimp, mixed species, cooked, moist heat (may have been previously frozen)', 'Crustaceans, shrimp, cooked (not previously frozen)', 'Fish, cod, Pacific, cooked, dry heat (may have been previously frozen)', 'Fish, cod, Pacific, cooked (not previously frozen)', '', 'Fish, pollock, Alaska, cooked, dry heat (may have been previously frozen)', 'Fish, pollock, Alaska, cooked (not previously frozen)', 'Fish, salmon, sockeye, cooked, dry heat', 'Beverages, tea, hibiscus, brewed', 'Kiwifruit, ZESPRI SunGold, raw', 'Pasta, cooked, unenriched, with added salt', 'Pork sausage, link/patty, cooked, pan-fried', '', 'Peaches, yellow, raw', 'Rice, white, glutinous, unenriched, cooked', 'Spices, mustard seed, ground', 'Spices, mustard seed, ground', 'Beverages, tea, black, brewed, prepared with tap water', 'Beverages, tea, herb, other than chamomile, brewed'))
+
+new=c('Babyfood, cereal, mixed, dry fortified', 'Beef, New Zealand, imported, variety meats and by-products, kidney, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products liver, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tongue, cooked, boiled', 'Beef, New Zealand, imported, variety meats and by-products, tripe uncooked, raw', 'Beverages, tea, green, brewed, regular', 'Cocoa mix, NESTLE, Rich Chocolate Hot Cocoa Mix', 'Beverages, coffee, brewed, prepared with tap water', 'Beverages, coffee, instant, regular, powder', 'Crustaceans, shrimp, mixed species, cooked, moist heat (may have been previously frozen)', 'Crustaceans, shrimp, cooked (not previously frozen)', 'Fish, cod, Pacific, cooked, dry heat (may have been previously frozen)', 'Fish, cod, Pacific, cooked (not previously frozen)', '', 'Fish, pollock, Alaska, cooked, dry heat (may have been previously frozen)', 'Fish, pollock, Alaska, cooked (not previously frozen)', 'Fish, salmon, sockeye, cooked, dry heat', 'Beverages, tea, hibiscus, brewed', 'Kiwifruit, ZESPRI SunGold, raw', 'Pasta, cooked, unenriched, with added salt', 'Pork sausage, link/patty, cooked, pan-fried', "Pasta, gluten-free, corn, cooked", 'Peaches, yellow, raw', 'Rice, white, glutinous, unenriched, cooked', 'Spices, mustard seed, ground', 'Spices, mustard seed, ground', 'Beverages, tea, black, brewed, prepared with tap water', 'Beverages, tea, herb, other than chamomile, brewed'))
+
 m[m[,2] != "", ]
 }
-
 
 
 ## Add the 2 FCT in one and merge with the links table (link betwen FBS/FCTSup-ProductionImportExport-USDA)
@@ -241,7 +242,7 @@ getFCT  <-  function() {
 
 		f28 <- sb2728_change()
 		i <- match(d$Item_FdGp3, f28[,1])
-		i = na.omit(cbind(d=1:length(i), f28=i))
+		i <- na.omit(cbind(d=1:length(i), f28=i))
 		d$Item_FdGp3[i[,1]] <- f28[i[,2],2]
 
 		# 470 NDB_No codes
@@ -272,7 +273,7 @@ getFCT  <-  function() {
 		FCT <- FCT[!is.na(FCT$PCT2_3 ), ]
 				
 		i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
-		#bad <- FCT[i, ]
+		bad <- FCT[i, ]
 
 		FCT <- FCT[!i, ]
 		

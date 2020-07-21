@@ -1,8 +1,8 @@
 Package: diets
 Type: Package
 Title: Dietary Quality
-Version: 0.5-3
-Date: 2020-05-28
+Version: 0.5-4
+Date: 2020-07-21
 Depends: R (>= 3.5.0)
 Maintainer: <r.hijmans@gmail.com>
 Description: Estimate micro-nutrient deficiencies for groups of people from their average food intake.
