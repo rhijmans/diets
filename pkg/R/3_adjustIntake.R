@@ -9,7 +9,7 @@ add_Ca <- function(intake, consumption=1.7, concentration=0.042) {
 	d$desc = "Calcium, Ca"
 	d$value = concentration
 	d$mass = consumption
-	d$unit = "GramsPerMille"
+	d$unit = "permille"
 	d$intake = d$value * d$mass
 	d$code = -1
 	intake <- rbind(intake,d)

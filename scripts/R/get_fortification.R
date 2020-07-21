@@ -12,7 +12,7 @@ get_fortif <- function() {
 	i <- d$Units == "IU/kg"
 	x[i]  <- d$Values[i] * 0.3 / 1000000
 	d$Values <- x
-	d$Units <- "GramsPerMille"
+	d$Units <- "permille"
 
   ## Open the file with ISO3 to country name links.
 	isoC <- readRDS("data/countries2.rds")

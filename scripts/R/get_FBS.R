@@ -29,6 +29,11 @@ get_FBS <- function() {
 		csvf <- gsub(".zip", ".csv", FBSfn)
 		fbs <- read.csv(csvf, stringsAsFactors = FALSE)
 
+# there are duplicates (old)
+#f = fbs[fbs$Area.Code == 2 & fbs$Year==1961 & fbs$Element=="Food supply (kcal/capita/day)", ]
+#f[f$Item == "Eggs", ]
+# so we will do a rather costly "unique" below 
+      
 		## Change name to the perfect ones !
 		# RH: rather keep the orginal names
 		#cn <- colnames(fbs)
@@ -53,7 +58,8 @@ get_FBS <- function() {
 	#    fbsFinal <- data.frame(ISO3 = fbsFinal$ISO3, Country=fbsFinal$Country, Year=fbsFinal$Year, fbsFinal[, c("ItemCode", "Item", "ElementCode", "Element", "Unit", "Value")])
 
 		fbs2 <- fbs2[, c("ISO3", "Area", "Year", "Item", "Element", "Unit", "Value")]
-		
+# remove duplicates
+		fbs2 <- unique(fbs2)
 
 	# example for the package	
 		if (method=="new") {
