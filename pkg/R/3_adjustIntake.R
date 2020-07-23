@@ -1,17 +1,18 @@
 
 
+
 add_Ca <- function(intake, consumption=1.7, concentration=0.042) {
 	## Add Calcium in Water
 	d <- intake[1,]
 	d[1,] <- NA
 	d$group = "water"
 	d$tag = "CA"
-	d$desc = "Calcium, Ca"
+	#d$desc = "Calcium, Ca"
 	d$value = concentration
 	d$mass = consumption
-	d$unit = "permille"
+	#d$unit = "permille"
 	d$intake = d$value * d$mass
-	d$code = -1
+	#d$code = -1
 	intake <- rbind(intake,d)
 }
 
@@ -36,18 +37,29 @@ adjust_Ca <- function(intake) {
 }
 
 
-# Miller
+# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1995555/
+# note that the units for TDZ and TDP is mmol/day
+# phytate = 660.04 g/mol
+# Zn = 65.38 g/mol
+# What is the unit of phytate?
+
+.miller <- function(TDZ, TDP, Amax=0.13, Kr=0.1, Kp=1.2) {
+	TDZ <- 1000 * TDZ / 65.38
+	TDP <- TDP / 660.04
+	(0.5 / TDZ) * ((Amax + TDZ + Kr *(1 + TDP / Kp)) - 
+		sqrt((Amax + TDZ + Kr * (1 + TDP / Kp))^2 - 4 * Amax * TDZ))
+}
+
+
 adjust_Zn <- function(intake) {
 	## Create variables with Phytate and Zinc values.
 	i  <- intake$tag == "PHYTAC"
-	phytate  <-  sum(intake$intake, na.rm = TRUE)
+	phytate  <-  sum(intake$intake[i], na.rm = TRUE)
 	i  <- intake$tag == "ZN"
 	zinc  <- sum(intake$intake[i])
+	FAZ <- .miller(zinc, phytate)
 
-	## Calculate mineral fractional absorption for zinc (Miller)
-	FAZ  <- (0.5/ zinc) * ((0.13 + zinc + 0.1 *(1 + phytate / 1.2)) -  sqrt((0.13 + zinc + 0.1 * (1 + phytate / 1.2))^2 - 4 *(0.13 * zinc)))
 	## Multiply fractional absorption for zinc with the zinc value
-	i  <- intake$tag == "ZN"
 	intake$intake[i]  <- intake$intake[i] * FAZ
 	intake
 }

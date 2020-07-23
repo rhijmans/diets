@@ -24,12 +24,16 @@ nutrientIntake  <-  function(consumption, content, weight=NULL, verbose=TRUE){
 			stop("no records in content$tag with value \"ENERC_KCAL\"")
 		}
 		## Merge and divide the total energy [(kcal/capita)/day] by the energy per food group (kcal) 
-		## RH: the listed unit is indeed kcal, but presumably it should be kcal/g  !?!?
+		## RH: the listed unit is indeed kcal, but presumably it is kcal/100g
+		## see page 39 of manual
 		## to get [(g/capita}/day]
 		#TWeight  <- merge(contentNRG[,c("code", "value")], consumption, by = "code")
 		#TWeight$Mass  <- TWeight[,"FdGp1_Val"] / TWeight[,"MNutr_Val"]
 		
-		m  <- merge(consumption, contentNRG, by="group")
+		# should this be needed? 
+		#contentNRG$value <- contentNRG$value * 100  # to get kcal/g
+		# apparently not
+		m <- merge(consumption, contentNRG, by="group")
 		m$mass  <- m$value.x / m$value.y
 		m$mass[!is.finite(m$mass)] <- 0  # division by 0, or 0/0
 
@@ -46,10 +50,11 @@ nutrientIntake  <-  function(consumption, content, weight=NULL, verbose=TRUE){
 	}
 
   ## Calculate micronutrient per person per day
+	cont$intake <- cont$value * cont$mass / 1000
 	#RH if I understand it well
 	# I think like this it mg/g * g/1000 = g
+	#cont$intake <- cont$value * cont$mass / 1000
 
-	cont$intake <- cont$value * cont$mass / 1000
 	cont <- cont[!is.na(cont$intake), ]
 	cont <- cont[cont$intake > 0, ]
 	#cont  <- cont[,c("tag", "MNutr_PersonDay", "Code_FdGp1", "Item_FdGp1", "MNutr_Val", "Mass")]

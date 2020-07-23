@@ -33,6 +33,7 @@ country_intake <- function(country, region, fortify=TRUE, adjust=TRUE) {
 		if (adjust) {
 			intake <- add_Ca(intake)
 			intake <- adjust_Ca(intake)
+			intake <- adjust_Fe(intake, Nheme)
 			intake <- adjust_Zn(intake)
 		}
 		intake <- aggregate(intake[, "intake", drop=FALSE], intake[, c("tag", "unit", "desc")], sum, na.rm=TRUE)
@@ -52,6 +53,7 @@ consumption <- consumption[consumption$Element == "Food supply (kcal/capita/day)
 colnames(consumption) <- c("country", "year", "group", "value")
 country_reg <- readRDS(file.path(dp, "data/countries.rds"))[, c("ISO3","CONTINENT")]
 colnames(country_reg)[2] <- "continent"
+Nheme  <- readRDS(system.file("ex", "NHemeIron.rds", package="diets"))
 
 fort <- readRDS(system.file("ex/fortification.rds", package="diets"))
 
@@ -66,21 +68,29 @@ old <- old[, c("ISO3", "Year", "Fortification", "Tagname", "Units", "Intake")]
 #"Requirements", "Prevalence.of.Inadequate.Intake"
 #old <- old[old$unit != "GramsPerMille", ]
 
-
-x <- country_intake(countries[1,1], countries[1,2], fortify=T, adjust=T)
-y <- unique(x[,c("tag", "unit")])
-y[y$tag == "CA", ]
-
+i <- 3
+x <- country_intake(countries[i,1], countries[i,2], fortify=T, adjust=T)
 
 m <- merge(old, x, by.x=c("ISO3", "Year", "Tagname"), by.y=c("country", "year", "tag"))
-
-y <- m[m$Year==1961,c("Intake", "intake")]
-plot(y)
-abline(0,1)
-
 m$delta <- 100 * ((m$Intake - m$intake) / m$Intake)
-a <- tapply(m$delta, m$Tagname, mean)
 
+y <- m[m$Year %in% 1961, c("Tagname", "Intake", "intake", "delta")]
+y[,2:3] <- round(y[,2:3], 5)
+y <- y[rev(order(y[,2])), ]
+tags <- y$Tagname
+
+z <- m[,c("Tagname", "Intake", "intake")]
+i <- match(z[,1], tags)
+cols <- rainbow(nrow(y))
+plot(z[,2:3], col=cols[i])
+abline(0,1)
+legend("topleft", legend=tags[1:4], col=cols[1:4], pch=1)
+
+m$delta <- ((m$Intake - m$intake) / m$Intake)
+a <- tapply(m$delta, m$Tagname, mean)
+sort(round(a, 3))
+
+country="AFG"; region="Asia"
 
 
 x_old <- merge(x_old, country_names, by="ISO3")

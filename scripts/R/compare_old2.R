@@ -9,24 +9,32 @@ Content <- base::readRDS(file.path(path, "example/Content.RDS"))
 Pop <- base::readRDS(file.path(path, "example/Pop.RDS"))
 ReqAge <- base::readRDS(file.path(path, "example/ReqAge.RDS"))
 CV <- base::readRDS(file.path(path, "example/CV.RDS"))
-
-Intake  <- Intake(Consumption, Content, "ENERGY", Wgpath=NULL, zn=FALSE)
-Intake <- AdjustIntake("RWA", Intake, ca=F, fe=F, fortif=F)
+Nheme  <- readRDS(system.file("ex", "NHemeIron.rds", package="diets"))
 
 newcons <- Consumption
 colnames(newcons) <- c("group", "value")
 newcont <- Content
 colnames(newcont) <- c("group", "tag", "value")
+
+
+Intake  <- Intake(Consumption, Content, "ENERGY", Wgpath=NULL, zn=FALSE)
+Intake <- AdjustIntake("RWA", Intake, ca=F, fe=F, fortif=F)
+
 new_intake  <- nutrientIntake(newcons, newcont, verbose=F)
+#new_intake <- add_Ca(new_intake)
+#new_intake <- adjust_Ca(new_intake)
+##new_intake <- adjust_Fe(new_intake, Nheme)
+#new_intake <- adjust_Zn(new_intake)
+
+Requirements <- Requirements(Pop, ReqAge, zn=FALSE)
+ReqIntk  <- ReqIntk(Intake, Requirements)
+
+req <- ReqIntk[ReqIntk$Tagname == "FE", ]
+
 m = merge(Intake[,c(3,1,2)], new_intake[,c(1,2,5)], by=1:2)
 plot(m[,3:4])
 
-Requirements <- Requirements(Pop, ReqAge, zn=FALSE)
 
-ReqIntk  <- ReqIntk(Intake, Requirements)
-
-
-req <- ReqIntk[ReqIntk$Tagname == "FE", ]
 
 Deficiencies <- Deficiencies(ReqIntk, CV)
 

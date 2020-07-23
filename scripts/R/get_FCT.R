@@ -230,58 +230,56 @@ m[m[,2] != "", ]
 ## Add the 2 FCT in one and merge with the links table (link betwen FBS/FCTSup-ProductionImportExport-USDA)
 getFCT  <-  function() {
 
+	# this table provides the link between USDA food groups (that have the micronutrients)
+	# and FAO FBS (from where we get the quantities)
+	d <- read.csv("data/FCTTitles.csv")
+	d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
+	#} else {
+	#	d  <- d[,c("Code_Local", "Item_Local", "PHYTAC", "PCT2_Local", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
+	#}
+	names(d)  <- c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3")
 
-		# this table provides the link between USDA food groups (that have the micronutrients)
-		# and FAO FBS (from where we get the quantities)
-		d <- read.csv("data/FCTTitles.csv")
-		d  <- d[,c("Code_FAOFBS", "Item_FAOFBS", "PHYTAC", "PCT2_FAO", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
-		#} else {
-		#	d  <- d[,c("Code_Local", "Item_Local", "PHYTAC", "PCT2_Local", "Code_FAOPIE", "Item_FAOPIE", "PCT1", "NDB_No", "Shrt_Desc")]
-		#}
-		names(d)  <- c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3")
+	f28 <- sb2728_change()
+	i <- match(d$Item_FdGp3, f28[,1])
+	i <- na.omit(cbind(d=1:length(i), f28=i))
+	d$Item_FdGp3[i[,1]] <- f28[i[,2],2]
 
-		f28 <- sb2728_change()
-		i <- match(d$Item_FdGp3, f28[,1])
-		i <- na.omit(cbind(d=1:length(i), f28=i))
-		d$Item_FdGp3[i[,1]] <- f28[i[,2],2]
+	# 470 NDB_No codes
+	# 270 FAO_PIE codes
+	# 97  Code_FAOFBS codes
+	# 134 Code_Local
 
-		# 470 NDB_No codes
-		# 270 FAO_PIE codes
-		# 97  Code_FAOFBS codes
-		# 134 Code_Local
+	## Food composition tables : Principal and Supplementary
+	FCTP <- .getUSDA()
+	FCTS <- .FCT_Sup_data()
 
-		## Food composition tables : Principal and Supplementary
-		FCTP <- .getUSDA()
-		FCTS <- .FCT_Sup_data()
+	## Select only the needed columns for bind / merge
+	FCTP  <- FCTP[,c("NDB_No", "Long_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
+	names(FCTP) <- c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
+	FCTS  <- FCTS[,c("WA_NDB_No", "WA_Shrt_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
+	names(FCTS) <-c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
+	## Bind the two FCT to create the Default FCT
+	FCT_data  <- rbind(FCTP, FCTS)
 
-		## Select only the needed columns for bind / merge
-		FCTP  <- FCTP[,c("NDB_No", "Long_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
-		names(FCTP) <- c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
-		FCTS  <- FCTS[,c("WA_NDB_No", "WA_Shrt_Desc", "Tagname", "NutrDesc", "Units", "Nutr_Val")]
-		names(FCTS) <-c("Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")
-		## Bind the two FCT to create the Default FCT
-		FCT_data  <- rbind(FCTP, FCTS)
+	## Merge with the FCT with the links table
+	d$Code_FdGp3 = NULL # 
+	FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Item_FdGp3"))
 
-
-		## Merge with the FCT with the links table
-		d$Code_FdGp3 = NULL # 
-		FCT  <- merge(d, FCT_data, all.x = TRUE, by=c("Item_FdGp3"))
-
-		## Clean the table
-		FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
-		# removing three non food items
-		FCT <- FCT[!is.na(FCT$PCT2_3 ), ]
+	## Clean the table
+	FCT  <- FCT[,c("Code_FdGp1", "Item_FdGp1", "PHYTAC", "PCT1_2", "Code_FdGp2", "Item_FdGp2", "PCT2_3", "Code_FdGp3", "Item_FdGp3", "Tagname", "MNutrDesc", "Units_MNutr", "MNutr_Val")]
+	# removing three non food items
+	FCT <- FCT[!is.na(FCT$PCT2_3 ), ]
 				
-		i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
-		bad <- FCT[i, ]
+	i <- is.na(FCT$MNutrDesc) & is.na(FCT$Tagname)
+	bad <- FCT[i, ]
 
-		FCT <- FCT[!i, ]
+	FCT <- FCT[!i, ]
 		
 		# NA tag (sodium) was read as <NA> (missing data)
-		FCT[FCT$MNutrDesc=="Sodium, Na", "Tagname"] <- "NA"  
+	FCT[FCT$MNutrDesc=="Sodium, Na", "Tagname"] <- "NA"  
 
-		f <- "pkg/FCT.rds"
-		saveRDS(FCT, f)
+	f <- "pkg/FCT.rds"
+	saveRDS(FCT, f)
 	#}	
 }
 
