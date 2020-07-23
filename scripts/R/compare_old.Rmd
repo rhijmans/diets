@@ -1,20 +1,23 @@
+---
+title: "Untitled"
+author: "Robert Hijmans"
+date: "7/22/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
 
+## Set paths 
+```{r setup}
 this <- system('hostname', TRUE)
-if (this == "LAPTOP-IVSPBGCA") {
-	dp <- "C:/github/diets/scripts"
-} else {
-	dp <- "C:/Users/jccaro/diets/scripts"
-}
+if (this == "LAPTOP-IVSPBGCA") { dp <- "C:/github/diets/scripts"
+} else { dp <- "C:/Users/jccaro/diets/scripts"}
+```
 
-#install.packages("remotes")
-#remotes::install_github("rhijmans/diets/pkg")
+## Function to compute intake for one country
 
+```{r}
 library(diets)
-
-# function for a country
-##############
-
-#country_intake <- function(cons, cont) {
 country_intake <- function(country, region, fortify=TRUE, adjust=TRUE) {
 
 	print(country); flush.console()
@@ -43,10 +46,12 @@ country_intake <- function(country, region, fortify=TRUE, adjust=TRUE) {
 	cntr_intake <- do.call(rbind, yout)
 	data.frame(country=country, region=region, cntr_intake)		
 }
+```
 
-#Load data and calculate intake
-##################
 
+##  Load data for all countries
+
+```{r}
 pop <- readRDS(file.path(dp, "WPP2019_PopulationBySingleAgeSex_1950-2019.rds"))
 consumption <- readRDS(file.path(dp, "FBS.rds"))
 consumption <- consumption[consumption$Element == "Food supply (kcal/capita/day)", c("ISO3", "Year", "Item", "Value")]
@@ -54,59 +59,68 @@ colnames(consumption) <- c("country", "year", "group", "value")
 country_reg <- readRDS(file.path(dp, "data/countries.rds"))[, c("ISO3","CONTINENT")]
 colnames(country_reg)[2] <- "continent"
 Nheme  <- readRDS(system.file("ex", "NHemeIron.rds", package="diets"))
-
 fort <- readRDS(system.file("ex/fortification.rds", package="diets"))
-
 conts <- c("Africa", "Americas", "Asia", "Europe", "Oceania")
 content <- lapply(conts, function(i) nutrientContent(continent=i, redpalmoil=0.5, orangesweetpot=0.2))
 names(content) <- conts 
 countries <- unique(consumption$country)
 countries <- merge(data.frame(ISO3=countries), country_reg, by="ISO3")
+```
 
+
+## Read old results for comparison
+
+```{r}
 old <- read.csv(file.path(dp, "data/2017paper_data.csv"))
 old <- old[, c("ISO3", "Year", "Fortification", "Tagname", "Units", "Intake")]
-#"Requirements", "Prevalence.of.Inadequate.Intake"
-#old <- old[old$unit != "GramsPerMille", ]
+```
 
-i <- 3
-x <- country_intake(countries[i,1], countries[i,2], fortify=T, adjust=T)
+## Pick a country from "countries" and run the function
+(1 is Afghanistan)
 
+```{r}
+i <- 1
+x <- country_intake(countries[i,1], countries[i,2], fortify=TRUE, adjust=FALSE)
+```
+
+## Merge results with old data 
+```{r}
 m <- merge(old, x, by.x=c("ISO3", "Year", "Tagname"), by.y=c("country", "year", "tag"))
-m$delta <- 100 * ((m$Intake - m$intake) / m$Intake)
+```
 
-y <- m[m$Year %in% 1961, c("Tagname", "Intake", "intake", "delta")]
+Compute difference as %
+
+```{r}
+m$delta <- 100 * ((m$Intake - m$intake) / m$Intake)
+```
+
+Pick a year to inspect
+```{r}
+year <- 1961 
+y <- m[m$Year %in% year, c("Tagname", "Intake", "intake", "delta")]
 y[,2:3] <- round(y[,2:3], 5)
 y <- y[rev(order(y[,2])), ]
-tags <- y$Tagname
+y
+```
 
+
+## Plot result for all years (for this country)
+
+```{r}
+tags <- y$Tagname
 z <- m[,c("Tagname", "Intake", "intake")]
 i <- match(z[,1], tags)
 cols <- rainbow(nrow(y))
 plot(z[,2:3], col=cols[i])
 abline(0,1)
 legend("topleft", legend=tags[1:4], col=cols[1:4], pch=1)
+```
 
-m$delta <- ((m$Intake - m$intake) / m$Intake)
+
+Average differences over all years (for this country).
+
+```{r}
 a <- tapply(m$delta, m$Tagname, mean)
 sort(round(a, 3))
-
-country="AFG"; region="Asia"
-
-
-x_old <- merge(x_old, country_names, by="ISO3")
-
-x_new <- x[x$tag %in% c(mn_tag),]
-x_new <- x_new[x_new$country %in% c(countries_old),]
-x_new <- x_new[x_new$year <= '2011',]
-x_old_intake <- x_old[, c("ISO3", "Year", "Tagname", "Intake")]
-x_new <- merge(x_new, x_old_intake, by, by.x=c("country", "year", "tag"), by.y=c("ISO3", "Year", "Tagname"))
-
-x_new$diff <- x_new$Intake/x_new$intake
-
-x_new_c <- aggregate(x_new[, "diff", drop=FALSE], x_new[, c("year", "CONTINENT", "tag")], mean, na.rm=TRUE)
-
-
-#
-#mn_tag <- unique(x_old$Tagname)
-#countries_old <- unique(x_old$ISO3)
+```
 
