@@ -12,13 +12,14 @@ For CV, see references.
 }
 
 \usage{
-deficiencies(intake, requirements, CV)
+deficiencies(intake, requirements, CV, old)
 }
 
 \arguments{
   \item{intake}{data.frame}
   \item{requirements}{data.frame}
   \item{CV}{data.frame. Must contain the following column: micronutrient tagname, CV value, units}
+  \item{old}{boolean. Use old method for comparison?}
 }
 
 \details{
