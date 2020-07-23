@@ -1,23 +1,14 @@
----
-title: "Untitled"
-author: "Robert Hijmans"
-date: "7/22/2020"
-output:
-  pdf_document: default
-  html_document: default
----
-
-## Set paths 
-```{r setup}
 this <- system('hostname', TRUE)
 if (this == "LAPTOP-IVSPBGCA") { dp <- "C:/github/diets/scripts"
 } else { dp <- "C:/Users/jccaro/diets/scripts"}
-```
 
-## Function to compute intake for one country
 
-```{r}
 library(diets)
+
+##################
+## compute intake for one country
+##################
+
 country_intake <- function(country, region, fortify=TRUE, adjust=TRUE) {
 
 	print(country); flush.console()
@@ -46,12 +37,10 @@ country_intake <- function(country, region, fortify=TRUE, adjust=TRUE) {
 	cntr_intake <- do.call(rbind, yout)
 	data.frame(country=country, region=region, cntr_intake)		
 }
-```
 
-
-##  Load data for all countries
-
-```{r}
+##################
+## Load data for all countries
+##################
 pop <- readRDS(file.path(dp, "WPP2019_PopulationBySingleAgeSex_1950-2019.rds"))
 consumption <- readRDS(file.path(dp, "FBS.rds"))
 consumption <- consumption[consumption$Element == "Food supply (kcal/capita/day)", c("ISO3", "Year", "Item", "Value")]
@@ -65,48 +54,28 @@ content <- lapply(conts, function(i) nutrientContent(continent=i, redpalmoil=0.5
 names(content) <- conts 
 countries <- unique(consumption$country)
 countries <- merge(data.frame(ISO3=countries), country_reg, by="ISO3")
-```
 
-
-## Read old results for comparison
-
-```{r}
+### old results for comparison
 old <- read.csv(file.path(dp, "data/2017paper_data.csv"))
 old <- old[, c("ISO3", "Year", "Fortification", "Tagname", "Units", "Intake")]
-```
 
-## Pick a country from "countries" and run the function
-(1 is Afghanistan)
 
-```{r}
-i <- 29
-x <- country_intake(countries[i,1], countries[i,2], fortify=TRUE, adjust=FALSE)
-```
+### pick your country from "countries"
+i <- 1
+x <- country_intake(countries[i,1], countries[i,2], fortify=F, adjust=F)
 
-## Merge results with old data 
-```{r}
 m <- merge(old, x, by.x=c("ISO3", "Year", "Tagname"), by.y=c("country", "year", "tag"))
-```
-
-Compute difference as %
-
-```{r}
+# difference as %
 m$delta <- 100 * ((m$Intake - m$intake) / m$Intake)
-```
 
-Pick a year to inspect
-```{r}
+# pick a year
 year <- 1961 
 y <- m[m$Year %in% year, c("Tagname", "Intake", "intake", "delta")]
 y[,2:3] <- round(y[,2:3], 5)
 y <- y[rev(order(y[,2])), ]
 y
-```
 
-
-## Plot result for all years (for this country)
-
-```{r}
+# plot all years
 tags <- y$Tagname
 z <- m[,c("Tagname", "Intake", "intake")]
 i <- match(z[,1], tags)
@@ -114,13 +83,7 @@ cols <- rainbow(nrow(y))
 plot(z[,2:3], col=cols[i])
 abline(0,1)
 legend("topleft", legend=tags[1:4], col=cols[1:4], pch=1)
-```
 
-
-Average differences over all years (for this country).
-
-```{r}
+# average differences over all years.
 a <- tapply(m$delta, m$Tagname, mean)
 sort(round(a, 3))
-```
-
