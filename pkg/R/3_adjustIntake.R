@@ -1,19 +1,18 @@
 
 
-
 add_Ca <- function(intake, consumption=1.7, concentration=0.042) {
 	## Add Calcium in Water
 	d <- intake[1,]
 	d[1,] <- NA
 	d$group = "water"
 	d$tag = "CA"
-	#d$desc = "Calcium, Ca"
+	d$desc = "Calcium, Ca"
 	d$value = concentration
 	d$mass = consumption
-	#d$unit = "permille"
+	d$unit = "permille"
 	d$intake = d$value * d$mass
-	#d$code = -1
-	intake <- rbind(intake,d)
+	d$code = -1
+	rbind(intake,d)
 }
 
 

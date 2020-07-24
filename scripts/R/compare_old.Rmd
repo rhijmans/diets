@@ -80,7 +80,7 @@ old <- old[, c("ISO3", "Year", "Fortification", "Tagname", "Units", "Intake")]
 
 ```{r}
 i <- 29
-x <- country_intake(countries[i,1], countries[i,2], fortify=TRUE, adjust=FALSE)
+x <- country_intake(countries[i,1], countries[i,2], fortify=TRUE, adjust=TRUE)
 ```
 
 ## Merge results with old data 
