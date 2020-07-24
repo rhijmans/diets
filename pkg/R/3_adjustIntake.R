@@ -43,8 +43,8 @@ adjust_Ca <- function(intake) {
 # What is the unit of phytate?
 
 .miller <- function(TDZ, TDP, Amax=0.13, Kr=0.1, Kp=1.2) {
-	TDZ <- 1000 * TDZ / 65.38
-	TDP <- TDP / 660.04
+	#TDZ <- TDZ / 65.38
+	#TDP <- TDP / 660.04
 	(0.5 / TDZ) * ((Amax + TDZ + Kr *(1 + TDP / Kp)) - 
 		sqrt((Amax + TDZ + Kr * (1 + TDP / Kp))^2 - 4 * Amax * TDZ))
 }
