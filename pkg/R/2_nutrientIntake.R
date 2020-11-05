@@ -13,8 +13,10 @@ nutrientIntake  <-  function(consumption, content, weight=NULL, verbose=TRUE){
 
 	if (verbose) {
 		i <- which(is.na(match(consumption$group, content$group)))
-		cat("consumption groups not found in content:\n")
-		print(consumption$group[i]); flush.console()
+		if (length(i) > 0) {
+			print(paste0("consumption groups not found in content:\n", consumption$group[i])); 
+			flush.console()
+		}
 	}
 
 	if (is.null(weight)) {
