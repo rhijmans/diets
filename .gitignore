@@ -6,7 +6,7 @@ scripts/process/*
 scripts/pkg/*
 scripts/*.rds
 old/
-
+fortification/
 *.pdf
 *.html
 
